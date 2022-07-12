@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/VolumeSlider.gd" type="Script" id=1]
+
+[node name="VolumeSliderControl" type="HSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1160.0
+margin_bottom = -700.0
+min_value = -40.0
+max_value = 0.0
+step = 5.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_top = -0.889
+anchor_right = 1.0
+anchor_bottom = -0.889
+margin_top = -12.22
+margin_bottom = 7.78
+rect_min_size = Vector2( 120, 20 )
+size_flags_horizontal = 3
+text = "Volume"
+align = 1
+valign = 1
+
+[connection signal="value_changed" from="." to="." method="_on_VolumeSliderControl_value_changed"]

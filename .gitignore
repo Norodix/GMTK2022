@@ -1,0 +1,4 @@
+*.zip
+
+# Godot-specific ignores
+.import/
