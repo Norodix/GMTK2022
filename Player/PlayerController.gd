@@ -9,16 +9,17 @@ export var max_speed = 5
 
 export var jump_height = 1.2
 
-export var maxJumps = 3
-var jumpsLeft = 3
+export var maxJumps = 2
+var jumpsLeft
 
 export(NodePath) var cameraObjectPath
 onready var cameraObject = get_node(cameraObjectPath)
 
 
-
 func _ready():
+	jumpsLeft = maxJumps
 	pass
+
 
 func _physics_process(delta):
 	# Get target direction
@@ -50,15 +51,19 @@ func jump() -> void:
 	# 1/2 * m * v^2 = m*g*h -> sqrt(2*g*h) = v
 	var v = sqrt(abs(2 * gravity.length() * jump_height))
 	velocity.y = v
-	jumpsLeft -= 1
+	if $CoyoteTimer.is_stopped():
+		jumpsLeft -= 1
+
 
 func is_jump_triggered() -> bool:
 	return not $JumpBuffer.is_stopped()
+
 
 func can_jump() -> bool:
 	var t = is_jump_triggered()
 	var j = jumpsLeft > 0
 	return t and j
+
 
 func handle_jump():
 	if Input.is_action_just_pressed("Jump"):
@@ -72,6 +77,7 @@ func handle_jump():
 		jump()
 		$CoyoteTimer.stop()
 		$JumpBuffer.stop()
+
 
 func resetPosition():
 	self.global_transform.origin = Vector3(0.0, 1.0, 0.0)
