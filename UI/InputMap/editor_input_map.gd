@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 const Action := preload("action.tscn")
 
@@ -7,15 +7,14 @@ const UI_ACTIONS_ORDER := ["Left", "Right", "Up", "Down", "Jump",
 	]
 
 export var other_actions_order := PoolStringArray()
-export var allow_add_actions := false
+
 export var allow_add_inputs := true
-export var allow_delete_actions := false
 export var allow_delete_inputs := true
 
 var key_confirm_ok: Button
 var requester: Control
 var cur_input: InputEvent
-onready var actions_list = $InputMap/Margin/VBox/Scroll/Actions
+onready var actions_list = $InputMap/Margin/VBox/Scroll/MarginContainer/Actions
 
 
 func _ready() -> void:
@@ -71,7 +70,7 @@ func _unhandled_key_input(event: InputEventKey) -> void:
 
 func add_action_ready(action: String) -> void:
 	var a := Action.instance()
-	a.init(action, allow_add_inputs, allow_delete_actions, allow_delete_inputs)
+	a.init(action, allow_add_inputs, allow_delete_inputs)
 	actions_list.add_child(a)
 	a.connect("input_requested", self, "on_input_requested", [a])
 	for input in a.get_all_inputs():

@@ -17,7 +17,7 @@ func _ready() -> void:
 	add_pop.connect("id_pressed", self, "on_add_id_pressed")
 
 
-func init(a: String, can_add: bool, can_delete: bool, can_delete_inputs: bool) -> void:
+func init(a: String, can_add: bool, can_delete_inputs: bool) -> void:
 	action = a
 	$HBox/Name.text = a
 	$HBox/Deadzone.value = InputMap.action_get_deadzone(action)
@@ -26,7 +26,6 @@ func init(a: String, can_add: bool, can_delete: bool, can_delete_inputs: bool) -
 		i.init(action, input, can_delete_inputs)
 		$Inputs.add_child(i)
 	$HBox/Add.visible = can_add
-	$HBox/Delete.visible = can_delete
 	allow_delete_inputs = can_delete_inputs
 
 

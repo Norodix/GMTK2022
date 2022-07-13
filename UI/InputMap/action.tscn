@@ -20,7 +20,7 @@ text = "name_of_action"
 
 [node name="Spacing" type="Control" parent="HBox"]
 margin_left = 124.0
-margin_right = 189.0
+margin_right = 293.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -35,18 +35,12 @@ step = 0.01
 value = 0.5
 
 [node name="Add" type="MenuButton" parent="HBox"]
-margin_left = 193.0
-margin_right = 268.0
+margin_left = 297.0
+margin_right = 372.0
 margin_bottom = 20.0
 text = "Add Input"
 flat = false
 items = [ "Key", null, 0, false, false, 0, 0, null, "", false, "Joy Button", null, 0, false, false, 1, 0, null, "", false, "Joy Axis", null, 0, false, false, 2, 0, null, "", false, "Mouse Button", null, 0, false, false, 3, 0, null, "", false ]
-
-[node name="Delete" type="Button" parent="HBox"]
-margin_left = 272.0
-margin_right = 372.0
-margin_bottom = 20.0
-text = "Delete Action"
 
 [node name="Inputs" type="VBoxContainer" parent="."]
 margin_top = 24.0
@@ -55,4 +49,3 @@ margin_bottom = 24.0
 
 [connection signal="toggled" from="HBox/Name" to="." method="_on_Name_toggled"]
 [connection signal="value_changed" from="HBox/Deadzone" to="." method="_on_Deadzone_value_changed"]
-[connection signal="pressed" from="HBox/Delete" to="." method="_on_Delete_pressed"]
