@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "InputMapResource",
+"language": "GDScript",
+"path": "res://UI/InputMap/InputMapResource.gd"
+} ]
+_global_script_class_icons={
+"InputMapResource": ""
+}
+
 [application]
 
 config/name="Gmtk 2022"
@@ -17,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DDD="*res://DrawLine3D.gd"
+InputMapSaveLoad="*res://UI/InputMap/InputMapSaveLoad.gd"
 
 [input]
 
