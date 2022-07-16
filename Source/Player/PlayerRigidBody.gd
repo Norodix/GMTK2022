@@ -2,7 +2,8 @@ extends RigidBody
 
 var inputDir : Vector2 = Vector2(0, 0)
 var forwardDir : Vector3 = Vector3.ZERO
-var mult = 10
+var impulse_multiplier_ground = 10
+var impulse_multiplier_air = 4
 onready var mesh = $MeshInstance.mesh
 onready var mdt : MeshDataTool = MeshDataTool.new()
 var ID = -1
@@ -20,6 +21,8 @@ var average_jerk = Vector3.ZERO
 var canPlay = true
 var knock_min_jerk = 200
 
+var on_ground_countdown = 15
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -32,6 +35,7 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	print(on_ground_countdown)
 	inputDir = Input.get_vector("Left", "Right", "Up", "Down")
 	forwardDir = get_horizontal_look_direction()
 	
@@ -81,8 +85,9 @@ func knockSound():
 
 func _integrate_forces(state):
 	var sideways : Vector3 = Vector3.UP.cross(forwardDir)
+	var mult = impulse_multiplier_ground if is_on_ground() else impulse_multiplier_air
 	add_central_force(forwardDir * inputDir.y * mult)
-	add_central_force(sideways * inputDir.x * mult)
+	add_central_force(sideways   * inputDir.x * mult)
 	
 	var upNormals = []
 	# Get the collision normals
@@ -102,8 +107,16 @@ func _integrate_forces(state):
 		upface_normal = sumnormal
 		# touching some ground thing, update ability
 		update_ability()
+		# touching ground, reset countdown to max
+		on_ground_countdown = 15
+	else:
+		on_ground_countdown -= 1
 	
 	DDD.DrawRay(self.global_transform.origin, sumnormal, Color(0, 0, 1))
+
+
+func is_on_ground() -> bool:
+	return on_ground_countdown >= 0
 
 
 func get_up_face_id(mdt : MeshDataTool, upVector : Vector3) -> int:
@@ -128,6 +141,8 @@ func offset_face(mdt : MeshDataTool, id : int):
 
 
 func find_ability() -> Ability:
+	if not $AbilityCooldown.is_stopped():
+		return null
 	var maxAligned = -2
 	var alignedAbility = null
 	for ability in $Abilities.get_children():
@@ -177,11 +192,15 @@ func update_ability():
 	if a != active_ability:
 		print(a.id)
 	active_ability = a
-	highlightAbility(a.id)
+	highlightAbility(a)
 
 
-func highlightAbility(id):
+func highlightAbility(ability):
 	var m : Material = $MeshInstance.get_active_material(0).next_pass
+	var id = 0
+	
+	if ability != null:
+		id = ability.id
 	
 	m.set_shader_param("mask1_enabled", id == 1)
 	m.set_shader_param("mask2_enabled", id == 2)
@@ -203,8 +222,6 @@ func handle_debug_inputs():
 		dash()
 	if Input.is_action_just_pressed("explode_debug"):
 		explode()
-		
-		
 
 
 func _on_PlayerRigidBody_body_entered(body):
