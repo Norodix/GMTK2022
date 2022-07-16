@@ -41,9 +41,7 @@ func _physics_process(delta):
 			apply_central_impulse(Vector3.UP * 2)
 	
 	if Input.is_action_just_pressed("Ability"):
-		if active_ability:
-			call(active_ability.callback)
-			active_ability = null
+		activateAbility()
 		pass
 	
 	var acc = (last_velocity - self.linear_velocity) / delta
@@ -53,6 +51,15 @@ func _physics_process(delta):
 	average_jerk = lerp(average_jerk, jerk, 0.2)
 	if average_jerk.length() > knock_min_jerk:
 		knockSound()
+
+
+func activateAbility():
+	if $AbilityCooldown.is_stopped():
+		if active_ability:
+			call(active_ability.callback)
+			active_ability = null
+			$AbilityCooldown.start()
+
 
 func knockSound():
 	var knockplayer : AudioStreamPlayer = $Knock
