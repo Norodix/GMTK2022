@@ -3,6 +3,7 @@ class_name Ability
 tool
 
 export(int) var id = -1
+export(String, "jump", "dash", "explode", "random") var callback = "random"
 
 func _ready():
 	pass # Replace with function body.

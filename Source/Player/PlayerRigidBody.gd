@@ -10,14 +10,19 @@ var upface_normal : Vector3 = Vector3.ZERO
 
 var up_limit = 0.7
 var active_ability : Ability = null
+var ability_jump_impulse = 10
+onready var ability_dash_angle = deg2rad(20)
+var ability_dash_impulse = 10
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	pass # Replace with function body.
 
 
 func _process(delta):
+	handle_debug_inputs()
 	#find_ability()
 #	mdt.create_from_surface(mesh, 0)
 #	var newID = get_up_face_id(mdt, Vector3.UP)
@@ -31,14 +36,18 @@ func _process(delta):
 
 func _physics_process(delta):
 	inputDir = Input.get_vector("Left", "Right", "Up", "Down")
-	forwardDir = $Position3D/TPScam.global_transform.basis.z
-	forwardDir.y = 0
-	forwardDir = forwardDir.normalized()
+	forwardDir = get_horizontal_look_direction()
 	
 	if Input.is_action_just_pressed("Jump"):
 		if $jumpCooldown.is_stopped():
 			$jumpCooldown.start()
-			apply_central_impulse(Vector3.UP * 10)
+			apply_central_impulse(Vector3.UP * 2)
+	
+	if Input.is_action_just_pressed("Ability"):
+		if active_ability:
+			call(active_ability.callback)
+			active_ability = null
+		pass
 	
 
 func _integrate_forces(state):
@@ -98,9 +107,53 @@ func find_ability() -> Ability:
 	pass
 
 
+func jump():
+	print("jump")
+	apply_central_impulse(Vector3.UP * ability_jump_impulse)
+
+
+func dash():
+	var dir : Vector3 = - get_horizontal_look_direction()
+	# add vertical component so that the angle mathces the config
+	# vert/horiz = tan(angle) -> tan(angle) * horiz = vert
+	dir.y = tan(ability_dash_angle)
+	dir = dir.normalized()
+	apply_central_impulse(dir * ability_dash_impulse)
+	print("dash")
+
+
+func explode():
+	$ExplosionHandler.explode()
+	print("explode")
+
+
+func random():
+	print("random")
+	var pool = ["jump", "dash", "explode"]
+	call(pool[randi() % 3])
+
+
 func _on_PlayerRigidBody_body_entered(body):
 	var a = find_ability()
 	if a != active_ability:
 		print(a.id)
 	active_ability = a
 	pass # Replace with function body.
+
+
+func get_horizontal_look_direction() -> Vector3:
+	var dir = $Position3D/TPScam.global_transform.basis.z
+	dir.y = 0
+	dir = dir.normalized()
+	return dir
+
+
+func handle_debug_inputs():
+	if Input.is_action_just_pressed("jump_debug"):
+		jump()
+	if Input.is_action_just_pressed("dash_debug"):
+		dash()
+	if Input.is_action_just_pressed("explode_debug"):
+		explode()
+		
+		
