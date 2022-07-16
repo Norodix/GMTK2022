@@ -24,4 +24,5 @@ glow_levels/4 = true
 glow_levels/5 = false
 glow_intensity = 3.86
 glow_strength = 0.84
+glow_bicubic_upscale = true
 glow_high_quality = true

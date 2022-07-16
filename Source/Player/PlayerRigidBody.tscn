@@ -74,57 +74,60 @@ visible = false
 
 [node name="Ability1" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0.8507, 0.5257, 0, -0.5257, 0.8507, 0, 0, 0, 1, 0.5257, 0.784731, 0 )
-id = 1
+id = 2
+callback = "dash"
 
 [node name="Ability2" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0.8507, -0.5257, 0, 0.5257, 0.8507, 0, 0, 0, 1, -0.5257, 0.867401, 0 )
-id = 2
+id = 1
+callback = "jump"
 
 [node name="Ability3" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0.526, -0.851, 0.245, 0.526, 0, -0.885, 0.851, 0.526, 0.396, -0.657, -0.024, 0.509 )
-id = 1
+id = 2
+callback = "dash"
 
 [node name="Ability4" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.5257, 0.8507, 0, -0.8507, 0.5257, 0, 0.557441, -0.8507 )
-id = 4
+id = 3
+callback = "explode"
 
 [node name="Ability5" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, -0.5257, 0.8507, 0, -0.8507, -0.5257, 0, -0.423435, -0.771307 )
-id = 1
+id = 2
+callback = "dash"
 
 [node name="Ability6" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0.19558, 0.8507, -0.5257, -0.8507, 0, -0.5257, -0.328026, 0.5257, 0.8507, 0.8507, -0.0438989, 0.5257 )
-id = 2
+id = 1
+callback = "jump"
 
 [node name="Ability7" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0.5257, -0.8507, 0, 0, 0, 0.8507, -0.8507, -0.5257, 0, -0.8507, 0.0230311, -0.5257 )
-id = 3
-callback = "jump"
+id = 4
 
 [node name="Ability8" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.5257, -0.8507, 0, 0.8507, 0.5257, 0, 0.540621, 0.8507 )
-id = 4
-callback = "dash"
+id = 3
+callback = "explode"
 
 [node name="Ability9" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, -0.5257, -0.8507, 0, 0.8507, -0.5257, 0, -0.482139, 0.8507 )
-id = 3
-callback = "explode"
+id = 4
 
 [node name="Ability10" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0, 0.8507, 0.5257, -0.8507, 0, 0, -1.21072e-08, -0.396427, 0.8507, 0.8507, -0.0368888, -0.5257 )
-id = 3
-callback = "jump"
+id = 4
 
 [node name="Ability11" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( -0.8507, 0.5257, 0, -0.5257, -0.8507, 0, 0, 0, 1, 0.5257, -0.807139, 0 )
-id = 4
-callback = "dash"
+id = 3
+callback = "explode"
 
 [node name="Ability12" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( -0.8507, -0.5257, 0, 0.5257, -0.8507, 0, 0, 0, 1, -0.5257, -0.807139, 0 )
-id = 2
-callback = "explode"
+id = 1
+callback = "jump"
 
 [node name="ExplosionHandler" type="Spatial" parent="."]
 script = ExtResource( 5 )

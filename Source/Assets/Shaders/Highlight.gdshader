@@ -31,5 +31,12 @@ void fragment(){
 			+ m3.r * float(mask3_enabled)
 			+ m4.r * float(mask4_enabled);
 
-	ALBEDO = vec3(1.0, 1.0, 1.0) * highlight_strength;
+	vec3 alb =  m1.rgb * float(mask1_enabled) 
+			  + m2.rgb * float(mask2_enabled)
+			  + m3.rgb * float(mask3_enabled)
+			  + m4.rgb * float(mask4_enabled);
+	
+	alb = alb * alb * alb * alb * alb * 15.0;
+	ALBEDO = alb;
+	//ALBEDO += vec3(1.0, 1.0, 1.0) * highlight_strength;
 }

@@ -23,9 +23,9 @@ shader_param/mask1_enabled = true
 shader_param/mask2_enabled = true
 shader_param/mask3_enabled = true
 shader_param/mask4_enabled = true
-shader_param/mask1 = ExtResource( 7 )
-shader_param/mask2 = ExtResource( 5 )
-shader_param/mask3 = ExtResource( 6 )
+shader_param/mask1 = ExtResource( 6 )
+shader_param/mask2 = ExtResource( 7 )
+shader_param/mask3 = ExtResource( 5 )
 shader_param/mask4 = ExtResource( 4 )
 
 [resource]
