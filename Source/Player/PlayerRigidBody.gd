@@ -18,6 +18,7 @@ var last_velocity = Vector3.ZERO
 var last_acceleration = Vector3.ZERO
 var average_jerk = Vector3.ZERO
 var canPlay = true
+var knock_min_jerk = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,15 +50,27 @@ func _physics_process(delta):
 	var jerk = (acc - last_acceleration) / delta
 	last_velocity = self.linear_velocity
 	last_acceleration = acc
-	
 	average_jerk = lerp(average_jerk, jerk, 0.2)
+	if average_jerk.length() > knock_min_jerk:
+		knockSound()
+
+func knockSound():
+	var knockplayer : AudioStreamPlayer = $Knock
+	var maxDB = 30
+	var maxJerk = 2000
+	var dbOffset = -30
 	
-	if average_jerk.length() > 200:
-		$RandomAudioStreamPlayer3D.play()
-		canPlay = false
-	if average_jerk.length() < 200 and $RandomAudioStreamPlayer3D.playing == false:
-		canPlay = true
-	
+	if knockplayer.playing == false:
+		# map from 0 to 6db based on jerk
+		var j = clamp(average_jerk.length(), knock_min_jerk, maxJerk) - knock_min_jerk
+		var db = j / (maxJerk - knock_min_jerk) * maxDB
+		var pitch = 1 + db/maxDB /2
+		db += dbOffset
+				
+		knockplayer.pitch_scale = pitch
+		knockplayer.volume_db = db
+		knockplayer.play()
+
 
 func _integrate_forces(state):
 	var sideways : Vector3 = Vector3.UP.cross(forwardDir)
