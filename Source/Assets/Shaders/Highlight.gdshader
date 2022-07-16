@@ -14,6 +14,11 @@ uniform bool mask2_enabled = false;
 uniform bool mask3_enabled = false;
 uniform bool mask4_enabled = false;
 
+uniform vec4 color1 : hint_color;
+uniform vec4 color2 : hint_color;
+uniform vec4 color3 : hint_color;
+uniform vec4 color4 : hint_color;
+
 void vertex()
 {
 	//VERTEX = (NORMAL * 0.1) + VERTEX;
@@ -31,12 +36,11 @@ void fragment(){
 			+ m3.r * float(mask3_enabled)
 			+ m4.r * float(mask4_enabled);
 
-	vec3 alb =  m1.rgb * float(mask1_enabled) 
-			  + m2.rgb * float(mask2_enabled)
-			  + m3.rgb * float(mask3_enabled)
-			  + m4.rgb * float(mask4_enabled);
+	vec3 alb =  m1.r * float(mask1_enabled) * color1.rgb
+			  + m2.r * float(mask2_enabled) * color2.rgb
+			  + m3.r * float(mask3_enabled) * color3.rgb
+			  + m4.r * float(mask4_enabled) * color4.rgb;
 	
-	alb = alb * alb * alb * alb * alb * 15.0;
 	ALBEDO = alb;
 	//ALBEDO += vec3(1.0, 1.0, 1.0) * highlight_strength;
 }
