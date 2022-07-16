@@ -71,7 +71,11 @@ func _integrate_forces(state):
 			sumnormal += n
 		sumnormal /= upNormals.size()
 		upface_normal = sumnormal
+		# touching some ground thing, update ability
+		update_ability()
+	
 	DDD.DrawRay(self.global_transform.origin, sumnormal, Color(0, 0, 1))
+
 
 func get_up_face_id(mdt : MeshDataTool, upVector : Vector3) -> int:
 	var n = mdt.get_face_count()
@@ -139,12 +143,21 @@ func random():
 	call(pool[randi() % 3])
 
 
-func _on_PlayerRigidBody_body_entered(body):
+func update_ability():
 	var a = find_ability()
 	if a != active_ability:
 		print(a.id)
 	active_ability = a
-	pass # Replace with function body.
+	highlightAbility(a.id)
+
+
+func highlightAbility(id):
+	var m : Material = $MeshInstance.get_active_material(0).next_pass
+	
+	m.set_shader_param("mask1_enabled", id == 1)
+	m.set_shader_param("mask2_enabled", id == 2)
+	m.set_shader_param("mask3_enabled", id == 3)
+	m.set_shader_param("mask4_enabled", id == 4)
 
 
 func get_horizontal_look_direction() -> Vector3:

@@ -24,7 +24,7 @@ void fragment(){
 	vec3 m4 = texture(mask4, UV).rgb;
 	
 	//ALPHA = m1.r * float(mask1_enabled) + m2.r * float(mask2_enabled);
-	ALPHA =   m1.r * float(mask2_enabled) 
+	ALPHA =   m1.r * float(mask1_enabled) 
 			+ m2.r * float(mask2_enabled)
 			+ m3.r * float(mask3_enabled)
 			+ m4.r * float(mask4_enabled);
