@@ -48,6 +48,8 @@ func _physics_process(delta):
 		activateAbility()
 		pass
 	
+	if delta == 0:
+		return
 	var acc = (last_velocity - self.linear_velocity) / delta
 	var jerk = (acc - last_acceleration) / delta
 	last_velocity = self.linear_velocity
@@ -55,7 +57,12 @@ func _physics_process(delta):
 	average_jerk = lerp(average_jerk, jerk, 0.2)
 	if average_jerk.length() > knock_min_jerk:
 		knockSound()
-
+	
+	# touching some ground thing, update ability
+	if is_on_ground():
+		update_ability()
+	
+	highlightAbility(active_ability)
 
 func activateAbility():
 	if $AbilityCooldown.is_stopped():
@@ -105,8 +112,6 @@ func _integrate_forces(state):
 			sumnormal += n
 		sumnormal /= upNormals.size()
 		upface_normal = sumnormal
-		# touching some ground thing, update ability
-		update_ability()
 		# touching ground, reset countdown to max
 		on_ground_countdown = 15
 	else:
@@ -192,7 +197,6 @@ func update_ability():
 	if a != active_ability:
 		print(a.id)
 	active_ability = a
-	highlightAbility(a)
 
 
 func highlightAbility(ability):

@@ -5,6 +5,8 @@ export var falloffFactor = 2
 export var verticlBias = 2
 export var biasFalloff = 3
 
+var jumpImpulse = 4
+
 var maxDistance
 
 # Called when the node enters the scene tree for the first time.
@@ -39,12 +41,14 @@ func explode():
 				var dir : Vector3 = (distance.normalized() + Vector3(0, bias, 0)).normalized()
 				var impulse : Vector3 = falloff(d, falloffFactor) * impulseCenter * dir
 				body.apply_central_impulse(impulse)
+				var torque = Vector3(randf(), randf(), randf()).normalized() / 5
+				body.apply_torque_impulse(torque)
 
 	$AudioStreamPlayer.play()
 	$Particles.amount = $Particles.amount - 1
 	$Particles.amount = $Particles.amount + 1
 	$Particles.emitting = true
-	get_parent().apply_central_impulse(Vector3(0, 1, 0) * 5)
+	get_parent().apply_central_impulse(Vector3(0, 1, 0) * jumpImpulse)
 	yield(get_tree().create_timer(0.05), "timeout")
 	get_node("../Position3D/TPScam").shake()
 
