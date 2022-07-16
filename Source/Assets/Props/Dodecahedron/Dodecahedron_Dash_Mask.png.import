@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Prop_Card_Tex.png-17a51c14727b14af5938833ee4b19e71.s3tc.stex"
-path.etc2="res://.import/Prop_Card_Tex.png-17a51c14727b14af5938833ee4b19e71.etc2.stex"
+path.s3tc="res://.import/Dodecahedron_Dash_Mask.png-ef0f324963c78af940f4b42e14bedde8.s3tc.stex"
+path.etc2="res://.import/Dodecahedron_Dash_Mask.png-ef0f324963c78af940f4b42e14bedde8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Props/Prop_Card_Tex.png"
-dest_files=[ "res://.import/Prop_Card_Tex.png-17a51c14727b14af5938833ee4b19e71.s3tc.stex", "res://.import/Prop_Card_Tex.png-17a51c14727b14af5938833ee4b19e71.etc2.stex" ]
+source_file="res://Assets/Props/Dodecahedron/Dodecahedron_Dash_Mask.png"
+dest_files=[ "res://.import/Dodecahedron_Dash_Mask.png-ef0f324963c78af940f4b42e14bedde8.s3tc.stex", "res://.import/Dodecahedron_Dash_Mask.png-ef0f324963c78af940f4b42e14bedde8.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

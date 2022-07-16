@@ -1,0 +1,54 @@
+[gd_resource type="ShaderMaterial" load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Shaders/CelShader/cel.shader" type="Shader" id=1]
+[ext_resource path="res://Assets/Shaders/Highlight.gdshader" type="Shader" id=2]
+[ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron_Tex.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron_Random_Mask.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron_Explosion_Mask.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron_Jump_Mask.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron_Dash_Mask.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Shaders/CelShader/outline.shader" type="Shader" id=8]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 8 )
+shader_param/outline_thickness = 0.022
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=1]
+render_priority = 1
+next_pass = SubResource( 2 )
+shader = ExtResource( 2 )
+shader_param/highlight_strength = 5.106
+shader_param/mask1_enabled = true
+shader_param/mask2_enabled = true
+shader_param/mask3_enabled = true
+shader_param/mask4_enabled = true
+shader_param/mask1 = ExtResource( 7 )
+shader_param/mask2 = ExtResource( 5 )
+shader_param/mask3 = ExtResource( 6 )
+shader_param/mask4 = ExtResource( 4 )
+
+[resource]
+next_pass = SubResource( 1 )
+shader = ExtResource( 1 )
+shader_param/use_shade = true
+shader_param/use_specular = false
+shader_param/use_rim = false
+shader_param/use_light = false
+shader_param/use_shadow = true
+shader_param/base_color = Color( 0.623529, 0.623529, 0.623529, 1 )
+shader_param/shade_color = Color( 0.305882, 0.305882, 0.305882, 1 )
+shader_param/specular_tint = Color( 0.74902, 0.74902, 0.74902, 0 )
+shader_param/rim_tint = Color( 0.74902, 0.74902, 0.74902, 0 )
+shader_param/shade_threshold = 0.212
+shader_param/shade_softness = 0.1
+shader_param/specular_glossiness = 15.0
+shader_param/specular_threshold = 0.5
+shader_param/specular_softness = 0.1
+shader_param/rim_threshold = 0.25
+shader_param/rim_softness = 0.05
+shader_param/rim_spread = 0.5
+shader_param/shadow_threshold = 0.7
+shader_param/shadow_softness = 0.1
+shader_param/base_texture = ExtResource( 3 )
+shader_param/shade_texture = ExtResource( 3 )
