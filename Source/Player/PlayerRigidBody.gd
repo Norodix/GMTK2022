@@ -113,7 +113,13 @@ func jump():
 
 
 func dash():
-	var dir : Vector3 = - get_horizontal_look_direction()
+	var forward = get_horizontal_look_direction()
+	var sideways : Vector3 = Vector3.UP.cross(forward)
+	var dir : Vector3 = Vector3.ZERO
+	if inputDir.length() > 0.1:
+		dir = (forward * inputDir.y + sideways * inputDir.x).normalized()
+	else:
+		dir = - get_horizontal_look_direction()
 	# add vertical component so that the angle mathces the config
 	# vert/horiz = tan(angle) -> tan(angle) * horiz = vert
 	dir.y = tan(ability_dash_angle)
