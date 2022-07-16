@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/kenney_prototypetextures/PNG/Dark/texture_01.png" type="Texture" id=1]
 [ext_resource path="res://Assets/kenney_prototypetextures/PNG/Green/texture_02.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/PlayerRigidBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WorldEnvironment.tres" type="Environment" id=4]
 [ext_resource path="res://UI/Pause/PauseMenu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -11,31 +12,12 @@ albedo_texture = ExtResource( 1 )
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="ProceduralSky" id=3]
-sky_top_color = Color( 0.215686, 0.470588, 0.8, 1 )
-sky_horizon_color = Color( 0.545098, 0.717647, 0.941176, 1 )
-sky_curve = 0.045
-ground_bottom_color = Color( 0.545098, 0.717647, 0.941176, 1 )
-ground_horizon_color = Color( 0.545098, 0.717647, 0.941176, 1 )
-sun_latitude = 60.0
-sun_longitude = 20.0
-
-[sub_resource type="Environment" id=4]
-background_mode = 2
-background_sky = SubResource( 3 )
-ambient_light_color = Color( 0.541176, 0.541176, 0.541176, 1 )
-ambient_light_energy = 1.94
-ambient_light_sky_contribution = 0.0
-tonemap_mode = 2
-tonemap_white = 16.0
-adjustment_enabled = true
-
 [node name="World" type="Spatial"]
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
 use_collision = true
 
-[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+[node name="floor" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
 width = 32.0
 height = 0.5
@@ -49,7 +31,12 @@ height = 1.0
 depth = 1.0
 material = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="slope" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 0.943587, -0.331124, 0, 0.331124, 0.943587, 9.08088, 1.37626, 3.34418 )
+width = 8.71127
+height = 0.756817
+depth = 19.0748
+material = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.04769 )
@@ -57,7 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.04769 )
 [node name="PauseMenu" parent="." instance=ExtResource( 5 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
+environment = ExtResource( 4 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( -0.939693, -0.296198, 0.17101, 0, 0.5, 0.866025, -0.34202, 0.813798, -0.469846, -2.216, 12.453, 0 )
@@ -66,3 +53,5 @@ light_bake_mode = 2
 shadow_enabled = true
 shadow_color = Color( 0.462745, 0.462745, 0.462745, 1 )
 directional_shadow_depth_range = 1
+
+[node name="PlayerRigidBody" parent="." instance=ExtResource( 3 )]

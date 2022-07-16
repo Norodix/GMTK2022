@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Dodec/UnitDodec.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Player/TPScam.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/PlayerRigidBody.gd" type="Script" id=3]
+[ext_resource path="res://Player/Ability.tscn" type="PackedScene" id=4]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( 0.356807, 5.96046e-08, 0.934172, 0.934172, 0.356807, 5.96046e-08, 0.577182, 0.577182, 0.577182, 5.96046e-08, 0.934172, 0.356807, -0.35699, 5.96046e-08, 0.934172, 5.96046e-08, -0.934172, 0.356807, 0.577182, -0.577365, 0.577182, 0.934172, -0.35699, 5.96046e-08, 0.356807, 5.96046e-08, -0.934172, 0.577182, 0.577182, -0.577365, 5.96046e-08, 0.934172, -0.35699, -0.934172, 0.356807, 5.96046e-08, -0.577365, 0.577182, 0.577182, -0.934172, -0.35699, 5.96046e-08, -0.577365, -0.577365, 0.577182, 5.96046e-08, -0.934172, -0.35699, 0.577182, -0.577365, -0.577365, -0.35699, 5.96046e-08, -0.934172, -0.577365, 0.577182, -0.577365, -0.577365, -0.577365, -0.577365 )
+
+[node name="PlayerRigidBody" type="RigidBody"]
+contacts_reported = 20
+contact_monitor = true
+can_sleep = false
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.993327, 0.115336, 0, -0.115336, 0.993327, 0, 0, 0 )
+
+[node name="TPScam" parent="Position3D" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.122933, 0.761055 )
+
+[node name="jumpCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Abilities" type="Spatial" parent="."]
+
+[node name="Ability1" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 0.8507, 0.5257, 0, -0.5257, 0.8507, 0, 0, 0, 1, 0.5257, 0.784731, 0 )
+id = 1
+
+[node name="Ability2" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 0.8507, -0.5257, 0, 0.5257, 0.8507, 0, 0, 0, 1, -0.5257, 0.867401, 0 )
+id = 2
+
+[node name="Ability3" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 0.5257, -0.8507, 0, 0.5257, 0, -0.8507, 0.8507, 0.5257, 0.5257, -0.5257, -0.0524689, 0.5257 )
+id = 3
+
+[node name="Ability4" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.5257, 0.8507, 0, -0.8507, 0.5257, 0, 0.557441, -0.8507 )
+id = 4
+
+[node name="Ability5" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -0.5257, 0.8507, 0, -0.8507, -0.5257, 0, -0.423435, -0.771307 )
+id = 5
+
+[node name="Ability6" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 0.19558, 0.8507, -0.5257, -0.8507, 0, -0.5257, -0.328026, 0.5257, 0.8507, 0.8507, -0.0438989, 0.5257 )
+id = 6
+
+[node name="Ability7" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 0.5257, -0.8507, 0, 0, 0, 0.8507, -0.8507, -0.5257, 0, -0.8507, 0.0230311, -0.5257 )
+id = 7
+
+[node name="Ability8" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.5257, -0.8507, 0, 0.8507, 0.5257, 0, 0.540621, 0.8507 )
+id = 8
+
+[node name="Ability9" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -0.5257, -0.8507, 0, 0.8507, -0.5257, 0, -0.482139, 0.8507 )
+id = 9
+
+[node name="Ability10" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( 0, 0.8507, 0.5257, -0.8507, 0, 0, -1.21072e-08, -0.396427, 0.8507, 0.8507, -0.0368888, -0.5257 )
+id = 10
+
+[node name="Ability11" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( -0.8507, 0.5257, 0, -0.5257, -0.8507, 0, 0, 0, 1, 0.5257, -0.807139, 0 )
+id = 11
+
+[node name="Ability12" parent="Abilities" instance=ExtResource( 4 )]
+transform = Transform( -0.8507, -0.5257, 0, 0.5257, -0.8507, 0, 0, 0, 1, -0.5257, -0.807139, 0 )
+id = 12
+
+[connection signal="body_entered" from="." to="." method="_on_PlayerRigidBody_body_entered"]
