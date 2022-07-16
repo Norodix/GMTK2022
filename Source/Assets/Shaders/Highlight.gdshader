@@ -2,6 +2,8 @@ shader_type spatial;
 
 render_mode cull_disabled, unshaded, ambient_light_disabled;
 
+uniform float highlight_strength = 2.0;
+
 uniform sampler2D mask1;
 uniform sampler2D mask2;
 uniform sampler2D mask3;
@@ -29,5 +31,5 @@ void fragment(){
 			+ m3.r * float(mask3_enabled)
 			+ m4.r * float(mask4_enabled);
 
-	ALBEDO = vec3(2.0, 2.0, 2.0);
+	ALBEDO = vec3(1.0, 1.0, 1.0) * highlight_strength;
 }

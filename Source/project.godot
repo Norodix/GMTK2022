@@ -124,6 +124,10 @@ explode_debug={
 3d_physics/layer_1="Environment"
 3d_physics/layer_2="Player"
 
+[logging]
+
+file_logging/log_path="user://logs/gmtk2022.log"
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -132,4 +136,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/shadows/filter_mode=2
 environment/default_environment="res://default_env.tres"

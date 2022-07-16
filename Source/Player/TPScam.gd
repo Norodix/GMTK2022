@@ -4,7 +4,11 @@ export var mouse_sensitivity = 1.2
 export var mouse_sensitivity_multiplier = 1.0 / 1000.0
 export var cam_tilt_default = 0.5
 export var joystick_sensitivity = 5
+export var cameraLerpFactor = 0.1
+
 var cam_sensitivity
+
+var camShakeLeft = 0
 
 onready var parentObject = get_parent()
 
@@ -25,11 +29,14 @@ func _ready():
 
 
 func _process(delta):
+	self.global_transform.origin = lerp(global_transform.origin,
+										parentObject.global_transform.origin, 
+										cameraLerpFactor)
 	process_joystick_camera(delta)
+	handle_shake()
 
 
 func process_joystick_camera(delta) -> void:
-	self.global_transform.origin = parentObject.global_transform.origin
 	# TODO add acceleration to joystick camera
 	var deadZone = 0.1
 	var inputDir = Input.get_vector("CamJoystickLeft", "CamJoystickRight", "CamJoystickUp", "CamJoystickDown", deadZone)
@@ -60,3 +67,17 @@ func rotateX(rad):
 	var new_offset = $Path/PathFollow.unit_offset + rad / PI
 	$Path/PathFollow.unit_offset = clamp(new_offset, 0.0, 0.95);
 	pass
+
+
+func shake():
+	camShakeLeft = 20
+
+
+func handle_shake():
+	var x = randf() * camShakeLeft / 100
+	var y = randf() * camShakeLeft / 100
+	camShakeLeft -= 1
+	if camShakeLeft < 0:
+		camShakeLeft = 0
+	$Path/PathFollow/PlayerCamera.h_offset = x
+	$Path/PathFollow/PlayerCamera.v_offset = y

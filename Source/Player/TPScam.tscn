@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 curve = SubResource( 5 )
 
 [node name="PathFollow" type="PathFollow" parent="Path"]
-transform = Transform( 1, 0, 0, 0, -0.566009, 0.824382, 0, -0.824399, -0.565998, 0, 1.57541, 1.80781 )
+transform = Transform( 1, 0, 0, 0, -0.0379652, 0.999259, 0, -0.999279, -0.0379645, 0, 0.957099, 2.91976 )
 offset = 3.49352
 rotation_mode = 4
 

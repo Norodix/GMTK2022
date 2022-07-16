@@ -11,7 +11,12 @@ var maxDistance
 func _ready():
 	maxDistance = $Area/CollisionShape.shape.radius
 	print("Max distance of explosion: ", maxDistance)
+	$AnimationPlayer.set_blend_time("ExplosionSquish", "stop", 1)
 	pass # Replace with function body.
+
+
+func _process(delta):
+	$Particles.global_transform.basis = Basis.IDENTITY
 
 
 func explode():
@@ -30,6 +35,16 @@ func explode():
 				var dir : Vector3 = (distance.normalized() + Vector3(0, bias, 0)).normalized()
 				var impulse : Vector3 = falloff(d, falloffFactor) * impulseCenter * dir
 				body.apply_central_impulse(impulse)
+
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("ExplosionSquish")
+	yield(get_tree().create_timer(0.1), "timeout")
+	$AudioStreamPlayer.play()
+	$Particles.amount = $Particles.amount - 1
+	$Particles.amount = $Particles.amount + 1
+	$Particles.emitting = true
+	yield(get_tree().create_timer(0.05), "timeout")
+	get_node("../Position3D/TPScam").shake()
 
 func falloff(d, factor):
 	return (1.0 - pow(d, factor))
