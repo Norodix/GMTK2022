@@ -176,3 +176,8 @@ func handle_debug_inputs():
 		explode()
 		
 		
+
+
+func _on_PlayerRigidBody_body_entered(body):
+	$RandomAudioStreamPlayer3D.play()
+	pass # Replace with function body.

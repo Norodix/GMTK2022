@@ -35,6 +35,10 @@ config/icon="res://icon.png"
 DDD="*res://DrawLine3D.gd"
 InputMapSaveLoad="*res://UI/InputMap/InputMapSaveLoad.gd"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )
+
 [input]
 
 Left={

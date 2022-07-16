@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/10.wav-bb0223ccadf1d3923d8d51f44d7e90bd.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/DiceRoll/10.wav"
+dest_files=[ "res://.import/10.wav-bb0223ccadf1d3923d8d51f44d7e90bd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
