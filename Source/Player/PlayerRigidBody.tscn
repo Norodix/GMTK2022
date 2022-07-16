@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Dodec/UnitDodec.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Player/TPScam.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/PlayerRigidBody.gd" type="Script" id=3]
 [ext_resource path="res://Player/Ability.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/ExplosionHandler.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Shaders/Dice.tres" type="Material" id=6]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( 0.356807, 5.96046e-08, 0.934172, 0.934172, 0.356807, 5.96046e-08, 0.577182, 0.577182, 0.577182, 5.96046e-08, 0.934172, 0.356807, -0.35699, 5.96046e-08, 0.934172, 5.96046e-08, -0.934172, 0.356807, 0.577182, -0.577365, 0.577182, 0.934172, -0.35699, 5.96046e-08, 0.356807, 5.96046e-08, -0.934172, 0.577182, 0.577182, -0.577365, 5.96046e-08, 0.934172, -0.35699, -0.934172, 0.356807, 5.96046e-08, -0.577365, 0.577182, 0.577182, -0.934172, -0.35699, 5.96046e-08, -0.577365, -0.577365, 0.577182, 5.96046e-08, -0.934172, -0.35699, 0.577182, -0.577365, -0.577365, -0.35699, 5.96046e-08, -0.934172, -0.577365, 0.577182, -0.577365, -0.577365, -0.577365, -0.577365 )
@@ -20,7 +21,7 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
-material/0 = null
+material/0 = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
