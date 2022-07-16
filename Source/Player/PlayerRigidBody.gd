@@ -14,6 +14,10 @@ var ability_jump_impulse = 10
 onready var ability_dash_angle = deg2rad(20)
 var ability_dash_impulse = 10
 
+var last_velocity = Vector3.ZERO
+var last_acceleration = Vector3.ZERO
+var average_jerk = Vector3.ZERO
+var canPlay = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,14 +27,6 @@ func _ready():
 
 func _process(delta):
 	handle_debug_inputs()
-	#find_ability()
-#	mdt.create_from_surface(mesh, 0)
-#	var newID = get_up_face_id(mdt, Vector3.UP)
-#	if ID != newID:
-#		ID = newID
-#		print("Upwards face: ", ID)
-#		var ability = find_ability()
-#		print(ability.id)
 	pass
 
 
@@ -48,6 +44,19 @@ func _physics_process(delta):
 			call(active_ability.callback)
 			active_ability = null
 		pass
+	
+	var acc = (last_velocity - self.linear_velocity) / delta
+	var jerk = (acc - last_acceleration) / delta
+	last_velocity = self.linear_velocity
+	last_acceleration = acc
+	
+	average_jerk = lerp(average_jerk, jerk, 0.2)
+	
+	if average_jerk.length() > 200:
+		$RandomAudioStreamPlayer3D.play()
+		canPlay = false
+	if average_jerk.length() < 200 and $RandomAudioStreamPlayer3D.playing == false:
+		canPlay = true
 	
 
 func _integrate_forces(state):
@@ -179,5 +188,5 @@ func handle_debug_inputs():
 
 
 func _on_PlayerRigidBody_body_entered(body):
-	$RandomAudioStreamPlayer3D.play()
+	#$RandomAudioStreamPlayer3D.play()
 	pass # Replace with function body.

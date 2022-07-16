@@ -20,6 +20,10 @@ func _process(delta):
 
 
 func explode():
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("ExplosionSquish")
+	yield(get_tree().create_timer(0.1), "timeout")
+	
 	var bodies = $Area.get_overlapping_bodies()
 	for body in bodies:
 		if body is RigidBody:
@@ -36,13 +40,11 @@ func explode():
 				var impulse : Vector3 = falloff(d, falloffFactor) * impulseCenter * dir
 				body.apply_central_impulse(impulse)
 
-	$AnimationPlayer.stop()
-	$AnimationPlayer.play("ExplosionSquish")
-	yield(get_tree().create_timer(0.1), "timeout")
 	$AudioStreamPlayer.play()
 	$Particles.amount = $Particles.amount - 1
 	$Particles.amount = $Particles.amount + 1
 	$Particles.emitting = true
+	get_parent().apply_central_impulse(Vector3(0, 1, 0) * 5)
 	yield(get_tree().create_timer(0.05), "timeout")
 	get_node("../Position3D/TPScam").shake()
 
