@@ -24,6 +24,7 @@ mesh = ExtResource( 1 )
 material/0 = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="Position3D" type="Position3D" parent="."]
@@ -36,6 +37,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.122933, 0.761055 )
 one_shot = true
 
 [node name="Abilities" type="Spatial" parent="."]
+visible = false
 
 [node name="Ability1" parent="Abilities" instance=ExtResource( 4 )]
 transform = Transform( 0.8507, 0.5257, 0, -0.5257, 0.8507, 0, 0, 0, 1, 0.5257, 0.784731, 0 )
