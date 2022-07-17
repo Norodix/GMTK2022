@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/PlayerRigidBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=4]
 [ext_resource path="res://UI/Pause/PauseMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Props/Prop_Card/Prop_Card.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Props/Prop_Domino/Prop_Domino.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Checkpoint/Spawn.gd" type="Script" id=8]
 [ext_resource path="res://Checkpoint/CheckPointIndicator.tscn" type="PackedScene" id=10]
@@ -61,6 +62,540 @@ transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -0.611114, -112.608, 4.6
 mesh = ExtResource( 11 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 12 )
+
+[node name="Card_Castle" parent="Game_Props" instance=ExtResource( 6 )]
+transform = Transform( 0.947702, 0.307087, 0.0869433, 0, 0.272415, -0.96218, -0.319158, 0.911859, 0.258168, -27.9688, -12.4885, 58.7852 )
+
+[node name="Prop_Card2" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -2.03013, -0.574776 )
+
+[node name="Prop_Card3" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.11675, -1.16554 )
+
+[node name="Prop_Card4" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -6.14688, -1.74032 )
+
+[node name="Prop_Card5" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.2959, -2.34875 )
+
+[node name="Prop_Card6" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -10.326, -2.92353 )
+
+[node name="Prop_Card7" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08035, -7.34789 )
+
+[node name="Prop_Card8" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, 0.0502167, -7.92266 )
+
+[node name="Prop_Card9" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0364, -8.51343 )
+
+[node name="Prop_Card10" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -4.06653, -9.08821 )
+
+[node name="Prop_Card11" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.21555, -9.69664 )
+
+[node name="Prop_Card12" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -8.24569, -10.2714 )
+
+[node name="Prop_Card" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.272415, 0.96218, 0, -0.96218, 0.272415, 0.0464392, -1.03684, -4.4509 )
+
+[node name="Prop_Card13" parent="Game_Props/Card_Castle" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.272415, 0.96218, 0, -0.96218, 0.272415, 0.0464392, -7.10395, -5.9081 )
+
+[node name="Card_Castle2" parent="Game_Props" instance=ExtResource( 6 )]
+transform = Transform( 0.682483, -0.703259, -0.199108, 0, 0.272415, -0.96218, 0.730901, 0.656672, 0.185918, 22.5903, -12.4885, 91.4923 )
+
+[node name="Prop_Card2" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -2.03013, -0.574776 )
+
+[node name="Prop_Card3" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.11675, -1.16554 )
+
+[node name="Prop_Card4" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -6.14688, -1.74032 )
+
+[node name="Prop_Card5" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.2959, -2.34875 )
+
+[node name="Prop_Card6" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -10.326, -2.92353 )
+
+[node name="Prop_Card7" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08035, -7.34789 )
+
+[node name="Prop_Card8" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, 0.0502167, -7.92266 )
+
+[node name="Prop_Card9" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0364, -8.51343 )
+
+[node name="Prop_Card10" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -4.06653, -9.08821 )
+
+[node name="Prop_Card11" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.21555, -9.69664 )
+
+[node name="Prop_Card12" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -8.24569, -10.2714 )
+
+[node name="Prop_Card" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.272415, 0.96218, 0, -0.96218, 0.272415, 0.0464392, -1.03684, -4.4509 )
+
+[node name="Prop_Card13" parent="Game_Props/Card_Castle2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.272415, 0.96218, 0, -0.96218, 0.272415, 0.0464392, -7.10395, -5.9081 )
+
+[node name="Card_Castle3" parent="Game_Props" instance=ExtResource( 6 )]
+transform = Transform( -0.639922, -0.739377, -0.209334, 0, 0.272415, -0.96218, 0.76844, -0.61572, -0.174324, -7.72813, -12.4885, -60.7027 )
+
+[node name="Prop_Card2" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -2.03013, -0.574776 )
+
+[node name="Prop_Card3" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.11675, -1.16554 )
+
+[node name="Prop_Card4" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -6.14688, -1.74032 )
+
+[node name="Prop_Card5" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.2959, -2.34875 )
+
+[node name="Prop_Card6" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -10.326, -2.92353 )
+
+[node name="Prop_Card7" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08035, -7.34789 )
+
+[node name="Prop_Card8" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, 0.0502167, -7.92266 )
+
+[node name="Prop_Card9" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0364, -8.51343 )
+
+[node name="Prop_Card10" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -4.06653, -9.08821 )
+
+[node name="Prop_Card11" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.21555, -9.69664 )
+
+[node name="Prop_Card12" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( -1, -8.41164e-08, -2.38152e-08, 8.41164e-08, -0.851581, -0.524224, 2.38152e-08, -0.524224, 0.851581, 0, -8.24569, -10.2714 )
+
+[node name="Prop_Card" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.272415, 0.96218, 0, -0.96218, 0.272415, 0.0464392, -1.03684, -4.4509 )
+
+[node name="Prop_Card13" parent="Game_Props/Card_Castle3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.272415, 0.96218, 0, -0.96218, 0.272415, 0.0464392, -7.10395, -5.9081 )
+
+[node name="Prop_Jenga" parent="Game_Props" instance=ExtResource( 2 )]
+transform = Transform( 0.912513, 0, -0.409047, 0, 1, 0, 0.409047, 0, 0.912513, 12.9183, -15.8332, 63.9581 )
+
+[node name="Prop_Jenga2" parent="Game_Props" instance=ExtResource( 2 )]
+transform = Transform( 0.76892, 0, 0.639345, 0, 1, 0, -0.639345, 0, 0.76892, 52.1157, -15.7329, 142.31 )
+
+[node name="Prop_Jenga3" parent="Game_Props" instance=ExtResource( 2 )]
+transform = Transform( 0.97466, 0, -0.223692, 0, 1, 0, 0.223692, 0, 0.97466, -44.2672, -15.7995, -56.5192 )
+
+[node name="Domino_Str" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3093, -16.0423, -48.3492 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Str" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Str" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71002 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Str" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.19645 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Str" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8244 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Str" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2352 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Str" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6356 )
+
+[node name="Domino_Crv" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2357, -16.0423, -65.3369 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv2" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.716436, 0, 0.697653, 0, 1, 0, -0.697653, 0, 0.716436, 19.7513, -16.0423, -80.6469 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv2/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv2/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv2/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv2/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv2/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Str2" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.983694, 0, 0.17985, 0, 1, 0, -0.17985, 0, 0.983694, -7.63604, -16.0423, 51.1532 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Str2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Str2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71002 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Str2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.19645 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Str2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8244 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Str2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2352 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Str2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6356 )
+
+[node name="Domino_Crv3" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.983694, 0, 0.17985, 0, 1, 0, -0.17985, 0, 0.983694, -10.7637, -16.0423, 34.4558 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv3/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv3/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv3/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv3/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv3/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv4" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.956213, 0, -0.292672, 0, 1, 0, 0.292672, 0, -0.956213, -28.3294, -16.0423, 9.05901 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv4/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv4/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv4/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv4/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv4/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Str3" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.983694, 0, 0.17985, 0, 1, 0, -0.17985, 0, 0.983694, 72.0665, -16.0423, 46.9699 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Str3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Str3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71002 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Str3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.19645 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Str3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8244 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Str3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2352 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Str3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6356 )
+
+[node name="Domino_Crv5" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.983694, 0, 0.17985, 0, 1, 0, -0.17985, 0, 0.983694, 68.9388, -16.0423, 30.2725 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv5/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv5/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv5/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv5/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv5/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv6" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.956213, 0, -0.292672, 0, 1, 0, 0.292672, 0, -0.956213, 51.3732, -16.0423, 4.87571 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv6/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv6/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv6/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv6/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv6/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Str4" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.962541, 0, -0.271138, 0, 1, 0, 0.271138, 0, -0.962541, 13.935, -16.0423, 109.947 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Str4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Str4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71002 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Str4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.19645 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Str4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8244 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Str4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2352 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Str4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6356 )
+
+[node name="Domino_Crv7" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.962541, 0, -0.271138, 0, 1, 0, 0.271138, 0, -0.962541, 18.6118, -16.0423, 126.279 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv7" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv7/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv7/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv7/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv7/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv7/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv8" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.924619, 0, 0.380893, 0, 1, 0, -0.380893, 0, 0.924619, 38.4776, -16.0423, 149.92 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv8" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv8/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv8/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv8/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv8/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv8/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Str5" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.561824, 0, -0.827257, 0, 1, 0, 0.827257, 0, -0.561824, 3.94794, -16.0423, -162.774 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Str5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Str5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71002 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Str5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.19645 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Str5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8244 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Str5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2352 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Str5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6356 )
+
+[node name="Domino_Crv10" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.561824, 0, -0.827257, 0, 1, 0, 0.827257, 0, -0.561824, 18.0425, -16.0423, -153.29 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv10" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv10/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv10/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv10/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv10/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv10/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv11" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.462136, 0, 0.886809, 0, 1, 0, -0.886809, 0, 0.462136, 48.4647, -16.0423, -147.995 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv11" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv11/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv11/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv11/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv11/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv11/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Str6" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.980484, 0, -0.196597, 0, 1, 0, 0.196597, 0, 0.980484, -66.5256, -16.0423, -48.6311 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Str6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Str6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.71002 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Str6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.19645 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Str6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.8244 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Str6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2352 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Str6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6356 )
+
+[node name="Domino_Crv12" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( 0.980484, 0, -0.196597, 0, 1, 0, 0.196597, 0, 0.980484, -63.2581, -16.0423, -65.3017 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv12" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv12/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv12/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv12/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv12/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv12/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv13" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.996665, 0, 0.081608, 0, 1, 0, -0.081608, 0, -0.996665, -70.1891, -16.0423, -95.3934 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv13" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv13/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv13/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv13/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv13/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv13/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
+
+[node name="Domino_Crv9" parent="Game_Props" instance=ExtResource( 7 )]
+transform = Transform( -0.983325, 0, -0.181858, 0, 1, 0, 0.181858, 0, -0.983325, -7.31176, -16.0423, 53.7032 )
+
+[node name="Prop_Domino2" parent="Game_Props/Domino_Crv9" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.33268 )
+
+[node name="Prop_Domino3" parent="Game_Props/Domino_Crv9/Prop_Domino2" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.37734 )
+
+[node name="Prop_Domino4" parent="Game_Props/Domino_Crv9/Prop_Domino2/Prop_Domino3" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.48642 )
+
+[node name="Prop_Domino5" parent="Game_Props/Domino_Crv9/Prop_Domino2/Prop_Domino3/Prop_Domino4" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.62795 )
+
+[node name="Prop_Domino6" parent="Game_Props/Domino_Crv9/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.41083 )
+
+[node name="Prop_Domino7" parent="Game_Props/Domino_Crv9/Prop_Domino2/Prop_Domino3/Prop_Domino4/Prop_Domino5/Prop_Domino6" instance=ExtResource( 7 )]
+transform = Transform( 0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, -2.40036 )
 
 [node name="Checkpoints" type="Spatial" parent="."]
 
