@@ -27,7 +27,7 @@ var on_ground_countdown = 15
 func _ready():
 	randomize()
 	if CheckPointSingleton.checkpoint:
-		self.global_transform.origin = CheckPointSingleton.checkpoint
+		self.global_transform = CheckPointSingleton.checkpoint
 	pass # Replace with function body.
 
 
