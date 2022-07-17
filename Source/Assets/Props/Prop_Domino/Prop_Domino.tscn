@@ -7,7 +7,7 @@
 margin = 0.1
 extents = Vector3( 1.04128, 2.02906, 0.579666 )
 
-[node name="Prop_Dice" type="RigidBody"]
+[node name="Prop_Domino" type="RigidBody"]
 mass = 0.5
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
@@ -24,5 +24,5 @@ light_energy = 0.0
 light_indirect_energy = 0.0
 light_specular = 0.0
 editor_only = true
-omni_range = 1.724
+omni_range = 4.962
 omni_attenuation = 1e-05
