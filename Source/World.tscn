@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
+[ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/PlayerRigidBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=4]
@@ -18,6 +19,7 @@
 [ext_resource path="res://Assets/Puzzles/Simple_Platform.tscn" type="PackedScene" id=19]
 
 [node name="World" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.04769 )
