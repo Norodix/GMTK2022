@@ -26,9 +26,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Gmtk 2022"
+config/name="Dice Dash"
 run/main_scene="res://World.tscn"
-config/icon="res://icon.png"
+config/icon="res://UI/HUD/Hud_Explosion.png"
 
 [autoload]
 
