@@ -35,7 +35,6 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	print(on_ground_countdown)
 	inputDir = Input.get_vector("Left", "Right", "Up", "Down")
 	forwardDir = get_horizontal_look_direction()
 	
@@ -198,7 +197,8 @@ func random():
 func update_ability():
 	var a = find_ability()
 	if a != active_ability:
-		print(a.id)
+		#print(a.id)
+		pass
 	active_ability = a
 
 

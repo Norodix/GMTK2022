@@ -1,51 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Shaders/Wood.tres" type="Material" id=1]
-[ext_resource path="res://Assets/kenney_prototypetextures/PNG/Green/texture_02.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/PlayerRigidBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=4]
 [ext_resource path="res://UI/Pause/PauseMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Props/Prop_Dice/Prop_Dice.tres" type="Material" id=7]
-[ext_resource path="res://Assets/Props/Prop_Dice/Prop_Dice.obj" type="ArrayMesh" id=8]
-[ext_resource path="res://Assets/Shaders/CelShader/outline.shader" type="Shader" id=9]
-[ext_resource path="res://Assets/Shaders/CelShader/cel.shader" type="Shader" id=10]
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_texture = ExtResource( 2 )
-
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.3, 0.3, 0.3 )
-
-[sub_resource type="CubeMesh" id=4]
-size = Vector3( 0.6, 0.6, 0.6 )
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = ExtResource( 9 )
-shader_param/outline_thickness = 0.046
-shader_param/outline_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="ShaderMaterial" id=6]
-next_pass = SubResource( 5 )
-shader = ExtResource( 10 )
-shader_param/use_shade = true
-shader_param/use_specular = false
-shader_param/use_rim = false
-shader_param/use_light = false
-shader_param/use_shadow = true
-shader_param/base_color = Color( 0.572549, 0.419608, 0.25098, 1 )
-shader_param/shade_color = Color( 0.25, 0.169042, 0.0825, 1 )
-shader_param/specular_tint = Color( 0.75, 0.75, 0.75, 0.75 )
-shader_param/rim_tint = Color( 0.75, 0.75, 0.75, 0.75 )
-shader_param/shade_threshold = -0.3
-shader_param/shade_softness = 0.326
-shader_param/specular_glossiness = 15.0
-shader_param/specular_threshold = 0.5
-shader_param/specular_softness = 0.1
-shader_param/rim_threshold = 0.25
-shader_param/rim_softness = 0.05
-shader_param/rim_spread = 0.5
-shader_param/shadow_threshold = 0.7
-shader_param/shadow_softness = 0.525
+[ext_resource path="res://Assets/Props/Prop_Card/Prop_Card.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Props/Prop_Dice/Prop_Dice.tscn" type="PackedScene" id=9]
 
 [node name="World" type="Spatial"]
 
@@ -58,13 +19,6 @@ width = 32.0
 height = 0.5
 depth = 32.0
 material = ExtResource( 1 )
-
-[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.5 )
-width = 1.0
-height = 1.0
-depth = 1.0
-material = SubResource( 2 )
 
 [node name="slope" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 0.943587, -0.331124, 0, 0.331124, 0.943587, 9.08088, 1.65539, 2.54875 )
@@ -100,89 +54,43 @@ directional_shadow_depth_range = 1
 [node name="PlayerRigidBody" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937065, 0 )
 
-[node name="TestCubes" type="Spatial" parent="."]
+[node name="Prop_Card" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, -0.937913, 0.34687, 0, -0.34687, -0.937913, -3.68312, 2.7612, 5.06063 )
+linear_damp = 3.0
+angular_damp = 0.0
 
-[node name="RigidBody" type="RigidBody" parent="TestCubes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.70331, 2.01505, 0 )
+[node name="TestDice" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92271, 2.42946, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody"]
-shape = SubResource( 3 )
+[node name="Spatial" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 0.631922, -0.695891, -0.34119, -0.432593, 0.0485727, -0.90028, 0.643069, 0.716503, -0.270343, 2.18643, 0.418732, -0.29443 )
 
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+[node name="Spatial2" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 0.921208, -0.35164, -0.166509, 0.308216, 0.920739, -0.239253, 0.237442, 0.169082, 0.956573, 2.61157, -0.889805, -1.55893 )
 
-[node name="RigidBody2" type="RigidBody" parent="TestCubes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68793, 2.01505, -1.92085 )
+[node name="Spatial3" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( -0.416041, 0.0516187, 0.90788, -0.83203, -0.424466, -0.357149, 0.366928, -0.903972, 0.219543, 0.363867, 1.5179, 1.20885 )
 
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody2"]
-shape = SubResource( 3 )
+[node name="Spatial4" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( -0.458485, -0.7807, 0.424617, -0.0231032, -0.467162, -0.88387, 0.888402, -0.415051, 0.19615, 0, 0, 0.538828 )
 
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody2"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+[node name="Spatial5" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( -0.440856, -0.384424, -0.811088, -0.897488, 0.20157, 0.392281, 0.0126887, 0.900881, -0.43388, 0.390949, -0.907253, -0.905672 )
 
-[node name="RigidBody3" type="RigidBody" parent="TestCubes"]
-transform = Transform( 0.86147, 0, -0.507809, 0, 1, 0, 0.507809, 0, 0.86147, -5.85373, 2.01505, 0.815125 )
+[node name="Spatial6" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45653, 0.994489, 1.30218 )
 
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody3"]
-shape = SubResource( 3 )
+[node name="Spatial7" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 0.418137, 0.193528, -0.887529, -0.711204, 0.677569, -0.187321, 0.565111, 0.70954, 0.420954, -1.4619, -0.750228, -0.211579 )
 
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody3"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+[node name="Spatial8" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 0.777022, -0.201398, 0.596385, -0.595331, 0.0726686, 0.800188, -0.204495, -0.97681, -0.0634335, 0, 1.80256, 0 )
 
-[node name="RigidBody4" type="RigidBody" parent="TestCubes"]
-transform = Transform( 0.727318, 0, -0.686301, 0, 1, 0, 0.686301, 0, 0.727318, -5.88533, 2.01505, -1.92664 )
+[node name="Spatial9" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 0.868151, -0.421459, -0.262081, -0.0496554, 0.451659, -0.890808, 0.49381, 0.786369, 0.37118, -3.19283, -1.08172, 0.021513 )
 
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody4"]
-shape = SubResource( 3 )
+[node name="Spatial10" parent="TestDice" instance=ExtResource( 9 )]
+transform = Transform( 0.952183, 0.222146, 0.209757, -0.277856, 0.915122, 0.292143, -0.127055, -0.336455, 0.933089, -1.1095, -0.654916, -2.77938 )
 
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody4"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
-
-[node name="RigidBody5" type="RigidBody" parent="TestCubes"]
-transform = Transform( 0.962616, -0.270869, 0, 0.270869, 0.962616, 0, 0, 0, 1, -4.66757, 2.86927, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody5"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody5"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
-
-[node name="RigidBody6" type="RigidBody" parent="TestCubes"]
-transform = Transform( 0.907294, 0.249283, -0.338639, 0, 0.805329, 0.592829, 0.420497, -0.53787, 0.730669, -7.16278, 1.06878, -0.0563791 )
-
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody6"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody6"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
-
-[node name="RigidBody7" type="RigidBody" parent="TestCubes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.70331, 2.01505, -1.52283 )
-
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody7"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody7"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
-
-[node name="RigidBody8" type="RigidBody" parent="TestCubes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95791, 2.01505, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="TestCubes/RigidBody8"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="TestCubes/RigidBody8"]
-mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.870072, 0.203113, 0.449133, 0.183216, 0.712622, -0.677202, -0.45761, 0.671502, 0.582819, -1.2965e-07, 0.847453, -5.63779 )
-mesh = ExtResource( 8 )
-material/0 = ExtResource( 7 )
+[node name="Prop_Jenga" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54781, -9.53674e-07, -11.4439 )

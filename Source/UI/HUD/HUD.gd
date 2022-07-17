@@ -28,7 +28,6 @@ func set_ability(ability : Ability):
 		return
 	$Indicator.visible = true
 	var icon = icons[ability.callback]
-	print(icon_jump)
 	$Indicator.texture = icon
 	$Indicator.modulate = colors[ability.callback]
 	pass
