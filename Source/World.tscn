@@ -43,16 +43,16 @@ directional_shadow_bias_split_scale = 0.268
 directional_shadow_depth_range = 1
 
 [node name="Spawn" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.67, -7.91198, 149.378 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.571224, -7.91197, -0.0499039 )
 script = ExtResource( 8 )
 
 [node name="PlayerRigidBody" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5916, 0.937065, 149.713 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.649616, 0.937073, 0.285133 )
 
 [node name="Game_Props" type="Spatial" parent="."]
 
 [node name="Spawn_Jenga_LOL" parent="Game_Props" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, 54.8083, -15.8175, 149.47 )
+transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -0.432934, -15.8175, 0.0419083 )
 
 [node name="Table_BG" parent="Game_Props" instance=ExtResource( 13 )]
 
@@ -65,95 +65,134 @@ material/0 = ExtResource( 12 )
 [node name="Checkpoints" type="Spatial" parent="."]
 
 [node name="CheckPoint" parent="Checkpoints" instance=ExtResource( 10 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -32.1136, -14.8539, 141.676 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -7.10238, -14.8539, 111.156 )
+
+[node name="CheckPoint2" parent="Checkpoints" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 42.6877, -14.8539, 95.003 )
+
+[node name="CheckPoint3" parent="Checkpoints" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 27.5652, -14.8539, 28.7345 )
+
+[node name="CheckPoint4" parent="Checkpoints" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -27.279, -14.8539, -10.6148 )
+
+[node name="CheckPoint5" parent="Checkpoints" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 33.2464, -14.8539, -27.5389 )
+
+[node name="CheckPoint6" parent="Checkpoints" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -7.9249, -14.8539, -136.773 )
+
+[node name="CheckPoint7" parent="Checkpoints" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 30.3085, -14.8539, -112.381 )
 
 [node name="Collectibles" type="Spatial" parent="."]
 
 [node name="Position3D" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.2914, -15.0878, 151.08 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5079, -8.51696, 112.602 )
 
 [node name="Position3D2" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0711, -9.01523, -29.1649 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0197, -14.8071, 106.106 )
 
 [node name="Position3D3" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94135, 9.04991, -9.76466 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4139, -8.33865, 38.9199 )
+
+[node name="Position3D4" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.0172, -14.4829, 10.5002 )
+
+[node name="Position3D5" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1535, -14.4829, -20.6179 )
+
+[node name="Position3D6" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2263, 11.813, -29.4143 )
+
+[node name="Position3D7" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.965, -14.7153, -115.817 )
+
+[node name="Position3D8" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7112, 9.61332, -126.592 )
 
 [node name="Puzzles" type="Spatial" parent="."]
 
 [node name="Simple_Prison" parent="Puzzles" instance=ExtResource( 15 )]
-transform = Transform( -0.752334, 0, 0.658781, 0, 1, 0, -0.658781, 0, -0.752334, -40.7113, -15.8332, 141.076 )
+transform = Transform( 0.60389, 0, -0.797068, 0, 1, 0, 0.797068, 0, 0.60389, 42.0197, -15.8332, -106.56 )
 
-[node name="Simple_Tower" parent="Puzzles" instance=ExtResource( 18 )]
-transform = Transform( -0.0476644, 0, 0.998863, 0, 1, 0, -0.998863, 0, -0.0476644, 22.7728, -16.0411, -6.17265 )
+[node name="Simple_Prison2" parent="Puzzles" instance=ExtResource( 15 )]
+transform = Transform( -0.520876, 0, -0.853633, 0, 1, 0, 0.853633, 0, -0.520876, 42.3765, -15.8332, 105.831 )
 
-[node name="Simple_Prison2" parent="Puzzles/Simple_Tower" instance=ExtResource( 15 )]
+[node name="Complex_Tower" parent="Puzzles" instance=ExtResource( 18 )]
+transform = Transform( -0.0476644, 0, 0.998863, 0, 1, 0, -0.998863, 0, -0.0476644, -6.92825, -16.0411, 121.077 )
+
+[node name="Simple_Prison2" parent="Puzzles/Complex_Tower" instance=ExtResource( 15 )]
 transform = Transform( -0.831944, 0, 0.554859, 0, 1, 0, -0.554859, 0, -0.831944, 15.3894, 6.31553, -41.519 )
 
-[node name="Simple_Platform" parent="Puzzles/Simple_Tower/Simple_Prison2" instance=ExtResource( 19 )]
+[node name="Simple_Platform" parent="Puzzles/Complex_Tower/Simple_Prison2" instance=ExtResource( 19 )]
 transform = Transform( -0.999919, 0, 0.0127581, 0, 1, 0, -0.0127581, 0, -0.999919, -13.3333, -6.31676, -10.0239 )
 
-[node name="Simple_Platform2" parent="Puzzles/Simple_Tower/Simple_Prison2" instance=ExtResource( 19 )]
+[node name="Simple_Platform2" parent="Puzzles/Complex_Tower/Simple_Prison2" instance=ExtResource( 19 )]
 transform = Transform( 0.0267181, 0, 0.999643, 0, 1, 0, -0.999643, 0, 0.0267181, 8.06946, -6.31676, -8.59428 )
 
-[node name="Prop_Jenga25" parent="Puzzles/Simple_Tower/Simple_Prison2" instance=ExtResource( 2 )]
+[node name="Prop_Jenga25" parent="Puzzles/Complex_Tower/Simple_Prison2" instance=ExtResource( 2 )]
 transform = Transform( -0.991198, 0, 0.132395, 0, 1, 0, -0.132395, 0, -0.991198, 5.79204, -6.09191, -24.2396 )
 
-[node name="Simple_Climb" parent="Puzzles" instance=ExtResource( 16 )]
-transform = Transform( 0.758362, 0, -0.651834, 0, 1, 0, 0.651834, 0, 0.758362, 46.2192, -16.0423, 103.701 )
-
 [node name="Simple_Tunnel" parent="Puzzles" instance=ExtResource( 17 )]
-transform = Transform( 0.758362, 0, -0.651834, 0, 1, 0, 0.651834, 0, 0.758362, 34.5263, -16.0423, 85.5728 )
+transform = Transform( -0.806021, 0, -0.591887, 0, 1, 0, 0.591887, 0, -0.806021, 46.6774, -16.0423, 35.2407 )
 
-[node name="Simple_Prison3" parent="Puzzles" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5588, -16.0423, 87.3408 )
+[node name="Simple_Climb" parent="Puzzles/Simple_Tunnel" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6839, 0, 6.12586 )
 
-[node name="Simple_Prison4" parent="Puzzles/Simple_Prison3" instance=ExtResource( 15 )]
+[node name="Complex_Prison" parent="Puzzles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2264, -16.0423, -6.75001 )
+
+[node name="Simple_Prison4" parent="Puzzles/Complex_Prison" instance=ExtResource( 15 )]
 transform = Transform( -0.910099, 0, 0.414392, 0, 1, 0, -0.414392, 0, -0.910099, -2.67992, 0, 6.81459 )
 
-[node name="Prop_Domino" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.999142, 0, 0.0414048, 0, 1, 0, -0.0414048, 0, 0.999142, 13.3861, 0.17698, -0.517014 )
 
-[node name="Prop_Domino2" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino2" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.999142, 0, 0.0414048, 0, 1, 0, -0.0414048, 0, 0.999142, 13.4666, 0.17698, 1.42673 )
 
-[node name="Prop_Domino3" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino3" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.999142, 0, 0.0414048, 0, 1, 0, -0.0414048, 0, 0.999142, 13.5227, 0.17698, 3.28304 )
 
-[node name="Prop_Domino4" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino4" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.996964, 0, 0.0778675, 0, 1, 0, -0.0778675, 0, 0.996964, 13.7672, 0.17698, 5.28578 )
 
-[node name="Prop_Domino5" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino5" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.991259, 0, 0.131928, 0, 1, 0, -0.131928, 0, 0.991259, 14.0201, 0.17698, 7.208 )
 
-[node name="Prop_Domino6" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino6" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.987145, 0, 0.159829, 0, 1, 0, -0.159829, 0, 0.987145, 14.3051, 0.17698, 9.18918 )
 
-[node name="Prop_Domino7" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino7" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.983261, 0, 0.182201, 0, 1, 0, -0.182201, 0, 0.983261, 14.7152, 0.17698, 11.3631 )
 
-[node name="Prop_Domino8" parent="Puzzles/Simple_Prison3" instance=ExtResource( 7 )]
+[node name="Prop_Domino8" parent="Puzzles/Complex_Prison" instance=ExtResource( 7 )]
 transform = Transform( 0.983261, 0, 0.182201, 0, 1, 0, -0.182201, 0, 0.983261, 15.2126, 0.17698, 13.4189 )
 
-[node name="Simple_Tower2" parent="Puzzles" instance=ExtResource( 18 )]
+[node name="Complex_Tower2" parent="Puzzles" instance=ExtResource( 18 )]
 transform = Transform( 0.0650201, 0, 0.997884, 0, 1, 0, -0.997884, 0, 0.0650201, -15.7839, -16.0423, -121.495 )
 
-[node name="Simple_Tunnel2" parent="Puzzles/Simple_Tower2" instance=ExtResource( 17 )]
+[node name="Simple_Tunnel2" parent="Puzzles/Complex_Tower2" instance=ExtResource( 17 )]
 transform = Transform( 0.783368, 0, -0.621558, 0, 1, 0, 0.621558, 0, 0.783368, 0.274786, 18.2958, -24.6871 )
 
-[node name="Simple_Platform3" parent="Puzzles/Simple_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
+[node name="Simple_Platform3" parent="Puzzles/Complex_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
 transform = Transform( 0.0197384, 0, 0.999805, 0, 1, 0, -0.999805, 0, 0.0197384, -5.93409, -18.2958, -1.21566 )
 
-[node name="Simple_Platform4" parent="Puzzles/Simple_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
+[node name="Simple_Platform4" parent="Puzzles/Complex_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
 transform = Transform( 0.0197384, 0, 0.999805, 0, 1, 0, -0.999805, 0, 0.0197384, -5.64673, -12.2842, -0.92804 )
 
-[node name="Simple_Platform5" parent="Puzzles/Simple_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
+[node name="Simple_Platform5" parent="Puzzles/Complex_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
 transform = Transform( 0.0197384, 0, 0.999805, 0, 1, 0, -0.999805, 0, 0.0197384, -4.38282, -6.27658, -0.574852 )
 
-[node name="Simple_Platform6" parent="Puzzles/Simple_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
+[node name="Simple_Platform6" parent="Puzzles/Complex_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
 transform = Transform( -0.022443, 0, 0.999748, 0, 1, 0, -0.999748, 0, -0.022443, 16.4282, -18.2958, -0.898737 )
 
-[node name="Simple_Platform7" parent="Puzzles/Simple_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
+[node name="Simple_Platform7" parent="Puzzles/Complex_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
 transform = Transform( -0.022443, 0, 0.999748, 0, 1, 0, -0.999748, 0, -0.022443, 16.7274, -12.2842, -0.623503 )
 
-[node name="Simple_Platform8" parent="Puzzles/Simple_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
+[node name="Simple_Platform8" parent="Puzzles/Complex_Tower2/Simple_Tunnel2" instance=ExtResource( 19 )]
 transform = Transform( -0.022443, 0, 0.999748, 0, 1, 0, -0.999748, 0, -0.022443, 18.0051, -6.27658, -0.323925 )
+
+[node name="Simple_Tower" parent="Puzzles" instance=ExtResource( 18 )]
+transform = Transform( 0.0067195, 0, -0.999977, 0, 1, 0, 0.999977, 0, 0.0067195, 44.4827, -16.0423, -19.7648 )
