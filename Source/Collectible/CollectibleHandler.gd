@@ -2,6 +2,7 @@ extends Node
 
 onready var collectibleScene = preload("Collectible.tscn")
 var pickupScore = 0
+var maxScore = 0
 
 onready var player :AudioStreamPlayer = AudioStreamPlayer.new()
 onready var music = preload("res://Sound/sfx/success.wav")
@@ -11,6 +12,8 @@ func _ready():
 	yield(get_tree().create_timer(0.5), "timeout")
 	var positions = get_tree().get_nodes_in_group("CollectiblePositions")
 	
+	maxScore = positions.size()
+			
 	for position in positions:
 		var c : Spatial = collectibleScene.instance()
 		self.add_child(c)
