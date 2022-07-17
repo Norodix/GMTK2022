@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Shaders/Wood.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Assets/Props/Room_BG/Room_BG.tres" type="Material" id=12]
 [ext_resource path="res://Assets/Props/Table_Boundaries/Table_Boundaries.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://Assets/Props/Prop_Pawn/Prop_Pawn.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://Assets/Puzzles/Simple_Prison.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Puzzles/Simple_Climb.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Puzzles/Simple_Tunnel.tscn" type="PackedScene" id=17]
 
 [node name="World" type="Spatial"]
 
@@ -22,9 +25,9 @@ use_collision = true
 
 [node name="floor" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
-width = 32.0
+width = 131.94
 height = 0.5
-depth = 32.0
+depth = 126.793
 material = ExtResource( 1 )
 
 [node name="slope" type="CSGBox" parent="CSGCombiner"]
@@ -106,6 +109,12 @@ transform = Transform( 0.952183, 0.222146, 0.209757, -0.277856, 0.915122, 0.2921
 [node name="Prop_Jenga" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54781, -9.53674e-07, -11.4439 )
 
+[node name="Prop_Jenga2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0576, 9.53675e-07, -25.444 )
+
+[node name="Prop_Jenga3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9496, 2.86102e-06, -12.012 )
+
 [node name="Prop_Domino" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.32002, 1.4514, -10.8358 )
 
@@ -127,524 +136,6 @@ material/0 = ExtResource( 12 )
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -1.38718, -91.9916, 9.81778 )
 mesh = ExtResource( 13 )
 material/0 = ExtResource( 12 )
-
-[node name="JengaWalls" type="Spatial" parent="."]
-
-[node name="Prop_Jenga2" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.0411, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga3" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4835, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga4" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.995583, 0, -0.0938824, 0, 1, 0, 0.0938824, 0, 0.995583, 62.6884, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga5" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.998501, 0, 0.0547411, 0, 1, 0, -0.0547411, 0, 0.998501, 54.8076, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga6" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.999977, 0, -0.00682411, 0, 1, 0, 0.00682411, 0, -0.999977, 46.6657, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga7" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4696, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga8" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0258, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga9" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0026, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga10" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.445, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga11" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.999684, 0, -0.0251476, 0, 1, 0, 0.0251476, 0, -0.999684, 6.6499, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga12" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23091, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga13" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3728, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga14" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.996655, 0, -0.0817298, 0, 1, 0, 0.0817298, 0, 0.996655, -17.5689, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga15" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0127, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga16" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9578, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga17" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5154, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga18" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3105, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga19" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1913, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga20" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3332, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga21" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5293, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga22" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9731, -16.1026, 61.9979 )
-
-[node name="Prop_Jenga23" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 78.0411, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga24" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 70.4835, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga25" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0217973, 0, -0.999762, 0, 1, 0, 0.999762, 0, 0.0217973, 62.2633, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga26" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 54.659, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga27" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 46.6657, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga28" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 38.4696, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga29" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0368878, 0, -0.999319, 0, 1, 0, 0.999319, 0, 0.0368878, 30.0258, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga30" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 22.0026, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga31" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 14.445, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga32" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0504013, 0, -0.998729, 0, 1, 0, 0.998729, 0, 0.0504013, 6.6499, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga33" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -1.23091, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga34" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -9.3728, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga35" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.117156, 0, 0.993114, 0, 1, 0, -0.993114, 0, 0.117156, -17.5689, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga36" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -26.0127, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga37" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -33.9578, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga38" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -41.5154, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga39" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -49.3105, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga40" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -57.1913, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga41" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -65.3332, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga42" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -73.5293, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga43" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -81.9731, -10.0123, 61.9979 )
-
-[node name="Prop_Jenga44" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.0411, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga45" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4835, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga46" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.995583, 0, -0.0938824, 0, 1, 0, 0.0938824, 0, 0.995583, 62.6884, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga47" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.998501, 0, 0.0547411, 0, 1, 0, -0.0547411, 0, 0.998501, 54.8076, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga48" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.999977, 0, -0.00682411, 0, 1, 0, 0.00682411, 0, -0.999977, 46.6657, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga49" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4696, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga50" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0258, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga51" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0026, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga52" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.445, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga53" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.999684, 0, -0.0251476, 0, 1, 0, 0.0251476, 0, -0.999684, 6.6499, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga55" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3728, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga56" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.996655, 0, -0.0817298, 0, 1, 0, 0.0817298, 0, 0.996655, -17.5689, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga57" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0127, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga58" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9578, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga59" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5154, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga60" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3105, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga61" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1913, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga62" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3332, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga63" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5293, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga64" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9731, -16.1026, -57.6932 )
-
-[node name="Prop_Jenga65" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 78.0411, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga66" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 70.4835, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga67" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0217973, 0, -0.999762, 0, 1, 0, 0.999762, 0, 0.0217973, 62.2633, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga68" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 54.659, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga69" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 46.6657, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga70" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 38.4696, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga71" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0368878, 0, -0.999319, 0, 1, 0, 0.999319, 0, 0.0368878, 30.0258, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga72" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 22.0026, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga73" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, 14.445, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga74" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0504013, 0, -0.998729, 0, 1, 0, 0.998729, 0, 0.0504013, 6.6499, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga75" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -1.23091, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga76" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -9.3728, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga77" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.117156, 0, 0.993114, 0, 1, 0, -0.993114, 0, 0.117156, -17.5689, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga78" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -26.0127, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga79" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -33.9578, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga80" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -41.5154, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga81" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -49.3105, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga82" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -57.1913, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga83" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -65.3332, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga84" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -73.5293, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga85" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00420621, 0, 0.999991, 0, 1, 0, -0.999991, 0, -0.00420621, -81.9731, -10.0123, -57.6932 )
-
-[node name="Prop_Jenga86" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -2.03164, -16.1026, 189.042 )
-
-[node name="Prop_Jenga87" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -2.02545, -16.1026, 181.484 )
-
-[node name="Prop_Jenga88" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0946991, 0, -0.995506, 0, 1, 0, 0.995506, 0, -0.0946991, -2.01905, -16.1026, 173.689 )
-
-[node name="Prop_Jenga89" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0539219, 0, -0.998545, 0, 1, 0, 0.998545, 0, 0.0539219, -2.01259, -16.1026, 165.808 )
-
-[node name="Prop_Jenga90" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00600381, 0, 0.999982, 0, 1, 0, -0.999982, 0, -0.00600381, -2.0059, -16.1026, 157.666 )
-
-[node name="Prop_Jenga91" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.99918, -16.1026, 149.47 )
-
-[node name="Prop_Jenga92" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.99226, -16.1026, 141.027 )
-
-[node name="Prop_Jenga93" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.98568, -16.1026, 133.003 )
-
-[node name="Prop_Jenga94" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.97948, -16.1026, 125.446 )
-
-[node name="Prop_Jenga95" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0243275, 0, 0.999704, 0, 1, 0, -0.999704, 0, -0.0243275, -1.97308, -16.1026, 117.651 )
-
-[node name="Prop_Jenga96" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.96662, -16.1026, 109.77 )
-
-[node name="Prop_Jenga97" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.95994, -16.1026, 101.628 )
-
-[node name="Prop_Jenga98" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0825473, 0, -0.996587, 0, 1, 0, 0.996587, 0, -0.0825473, -1.95321, -16.1026, 93.4318 )
-
-[node name="Prop_Jenga99" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.94629, -16.1026, 84.988 )
-
-[node name="Prop_Jenga100" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.93977, -16.1026, 77.043 )
-
-[node name="Prop_Jenga101" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.93357, -16.1026, 69.4853 )
-
-[node name="Prop_Jenga103" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.92071, -16.1026, 53.8095 )
-
-[node name="Prop_Jenga104" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.91403, -16.1026, 45.6676 )
-
-[node name="Prop_Jenga105" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.90731, -16.1026, 37.4715 )
-
-[node name="Prop_Jenga106" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.90038, -16.1026, 29.0277 )
-
-[node name="Prop_Jenga107" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.03164, -10.0123, 189.042 )
-
-[node name="Prop_Jenga108" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.02545, -10.0123, 181.484 )
-
-[node name="Prop_Jenga109" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.99978, 0, -0.0209772, 0, 1, 0, 0.0209772, 0, -0.99978, -2.0187, -10.0123, 173.264 )
-
-[node name="Prop_Jenga110" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.01246, -10.0123, 165.66 )
-
-[node name="Prop_Jenga111" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.00591, -10.0123, 157.666 )
-
-[node name="Prop_Jenga112" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.99918, -10.0123, 149.47 )
-
-[node name="Prop_Jenga113" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.999349, 0, -0.036068, 0, 1, 0, 0.036068, 0, -0.999349, -1.99225, -10.0123, 141.027 )
-
-[node name="Prop_Jenga114" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.98568, -10.0123, 133.003 )
-
-[node name="Prop_Jenga115" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.97948, -10.0123, 125.446 )
-
-[node name="Prop_Jenga116" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.99877, 0, -0.049582, 0, 1, 0, 0.049582, 0, -0.99877, -1.97308, -10.0123, 117.651 )
-
-[node name="Prop_Jenga117" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.96662, -10.0123, 109.77 )
-
-[node name="Prop_Jenga118" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.95994, -10.0123, 101.628 )
-
-[node name="Prop_Jenga119" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.993017, 0, -0.117971, 0, 1, 0, 0.117971, 0, 0.993017, -1.95321, -10.0123, 93.4318 )
-
-[node name="Prop_Jenga120" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.94629, -10.0123, 84.988 )
-
-[node name="Prop_Jenga121" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.93977, -10.0123, 77.043 )
-
-[node name="Prop_Jenga122" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.93357, -10.0123, 69.4853 )
-
-[node name="Prop_Jenga124" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.92071, -10.0123, 53.8095 )
-
-[node name="Prop_Jenga125" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.91403, -10.0123, 45.6676 )
-
-[node name="Prop_Jenga126" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.90731, -10.0123, 37.4715 )
-
-[node name="Prop_Jenga127" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.90038, -10.0123, 29.0277 )
-
-[node name="Prop_Jenga128" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -2.03164, -16.1026, 21.1104 )
-
-[node name="Prop_Jenga129" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -2.02545, -16.1026, 13.5528 )
-
-[node name="Prop_Jenga130" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0946991, 0, -0.995506, 0, 1, 0, 0.995506, 0, -0.0946991, -2.01905, -16.1026, 5.75774 )
-
-[node name="Prop_Jenga131" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0539219, 0, -0.998545, 0, 1, 0, 0.998545, 0, 0.0539219, -2.01259, -16.1026, -2.12309 )
-
-[node name="Prop_Jenga132" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.00600381, 0, 0.999982, 0, 1, 0, -0.999982, 0, -0.00600381, -2.0059, -16.1026, -10.265 )
-
-[node name="Prop_Jenga133" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.99918, -16.1026, -18.4611 )
-
-[node name="Prop_Jenga134" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.99226, -16.1026, -26.9049 )
-
-[node name="Prop_Jenga135" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.98568, -16.1026, -34.9281 )
-
-[node name="Prop_Jenga136" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.97948, -16.1026, -42.4857 )
-
-[node name="Prop_Jenga137" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0243275, 0, 0.999704, 0, 1, 0, -0.999704, 0, -0.0243275, -1.97308, -16.1026, -50.2808 )
-
-[node name="Prop_Jenga138" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.96662, -16.1026, -58.1616 )
-
-[node name="Prop_Jenga139" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.95994, -16.1026, -66.3035 )
-
-[node name="Prop_Jenga140" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0825473, 0, -0.996587, 0, 1, 0, 0.996587, 0, -0.0825473, -1.95321, -16.1026, -74.4996 )
-
-[node name="Prop_Jenga141" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.94629, -16.1026, -82.9434 )
-
-[node name="Prop_Jenga142" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.93977, -16.1026, -90.8884 )
-
-[node name="Prop_Jenga143" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.93357, -16.1026, -98.4461 )
-
-[node name="Prop_Jenga144" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.92718, -16.1026, -106.241 )
-
-[node name="Prop_Jenga145" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.92071, -16.1026, -114.122 )
-
-[node name="Prop_Jenga146" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.91403, -16.1026, -122.264 )
-
-[node name="Prop_Jenga147" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.90731, -16.1026, -130.46 )
-
-[node name="Prop_Jenga148" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -1.90038, -16.1026, -138.904 )
-
-[node name="Prop_Jenga149" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.03164, -10.0123, 21.1104 )
-
-[node name="Prop_Jenga150" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.02545, -10.0123, 13.5528 )
-
-[node name="Prop_Jenga151" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.99978, 0, -0.0209772, 0, 1, 0, 0.0209772, 0, -0.99978, -2.0187, -10.0123, 5.33263 )
-
-[node name="Prop_Jenga152" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.01246, -10.0123, -2.27171 )
-
-[node name="Prop_Jenga153" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.00591, -10.0123, -10.265 )
-
-[node name="Prop_Jenga154" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.99918, -10.0123, -18.4611 )
-
-[node name="Prop_Jenga155" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.999349, 0, -0.036068, 0, 1, 0, 0.036068, 0, -0.999349, -1.99225, -10.0123, -26.9049 )
-
-[node name="Prop_Jenga156" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.98568, -10.0123, -34.9281 )
-
-[node name="Prop_Jenga157" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.97948, -10.0123, -42.4857 )
-
-[node name="Prop_Jenga158" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.99877, 0, -0.049582, 0, 1, 0, 0.049582, 0, -0.99877, -1.97308, -10.0123, -50.2808 )
-
-[node name="Prop_Jenga160" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.95994, -10.0123, -66.3035 )
-
-[node name="Prop_Jenga161" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.993017, 0, -0.117971, 0, 1, 0, 0.117971, 0, 0.993017, -1.95321, -10.0123, -74.4996 )
-
-[node name="Prop_Jenga162" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.94629, -10.0123, -82.9434 )
-
-[node name="Prop_Jenga163" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.93977, -10.0123, -90.8884 )
-
-[node name="Prop_Jenga164" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.93357, -10.0123, -98.4461 )
-
-[node name="Prop_Jenga165" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.92718, -10.0123, -106.241 )
-
-[node name="Prop_Jenga166" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.92071, -10.0123, -114.122 )
-
-[node name="Prop_Jenga167" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.91403, -10.0123, -122.264 )
-
-[node name="Prop_Jenga168" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.90731, -10.0123, -130.46 )
-
-[node name="Prop_Jenga169" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -1.90038, -10.0123, -138.904 )
-
-[node name="Prop_Jenga170" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -2.03164, -16.1026, -146.623 )
-
-[node name="Prop_Jenga171" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.000820323, 0, -1, 0, 1, 0, 1, 0, -0.000820323, -2.02545, -16.1026, -154.18 )
-
-[node name="Prop_Jenga172" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.0946991, 0, -0.995506, 0, 1, 0, 0.995506, 0, -0.0946991, -2.01905, -16.1026, -161.975 )
-
-[node name="Prop_Jenga173" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.0539219, 0, -0.998545, 0, 1, 0, 0.998545, 0, 0.0539219, -2.01259, -16.1026, -169.225 )
-
-[node name="Prop_Jenga191" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.03164, -10.0123, -146.623 )
-
-[node name="Prop_Jenga192" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.02545, -10.0123, -154.18 )
-
-[node name="Prop_Jenga193" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( -0.99978, 0, -0.0209772, 0, 1, 0, 0.0209772, 0, -0.99978, -2.0187, -10.0123, -162.4 )
-
-[node name="Prop_Jenga194" parent="JengaWalls" instance=ExtResource( 2 )]
-transform = Transform( 0.999994, 0, 0.00338589, 0, 1, 0, -0.00338589, 0, 0.999994, -2.01246, -10.0123, -169.373 )
 
 [node name="Game_Props" type="Spatial" parent="."]
 
@@ -853,3 +344,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47489, 0.482507, -6.95286 )
 
 [node name="Position3D3" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82496, 0.482507, -6.95286 )
+
+[node name="Puzzles" type="Spatial" parent="."]
+
+[node name="Simple_Prison" parent="Puzzles" instance=ExtResource( 15 )]
+transform = Transform( -0.733789, 0, -0.679377, 0, 1, 0, 0.679377, 0, -0.733789, 39.6252, 0.194717, 38.3782 )
+
+[node name="Simple_Climb" parent="Puzzles" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.34879, 9.53674e-07, 35.0936 )
+
+[node name="Simple_Tunnel" parent="Puzzles" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5569, 0.187787, 28.9846 )

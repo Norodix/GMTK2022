@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=1]
+
+[node name="Simple_Tunnel" type="Spatial"]
+
+[node name="Prop_Jenga4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01417, 0, -5.17719 )
+
+[node name="Prop_Jenga13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.942221, 0, 0.334991, 0, 1, 0, -0.334991, 0, 0.942221, 14.1012, 1.90735e-06, -5.97551 )
+
+[node name="Prop_Jenga10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73039, 0, 5.57276 )
+
+[node name="Prop_Jenga5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86174, 0, 0 )
+
+[node name="Prop_Jenga6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.999161, 0, -0.0409514, 0, 1, 0, 0.0409514, 0, -0.999161, 6.47396, 5.95208, -0.0288414 )
+
+[node name="Prop_Jenga7" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.022949, 0, -0.999737, 0, 1, 0, 0.999737, 0, -0.022949, -6.34423, 5.95208, 0.0348346 )
+
+[node name="Prop_Jenga8" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.022949, 0, -0.999737, 0, 1, 0, 0.999737, 0, -0.022949, 4.24256, 11.9327, -0.0800635 )
+
+[node name="Prop_Jenga11" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.999161, 0, -0.0409514, 0, 1, 0, 0.0409514, 0, -0.999161, 9.92245, 5.95208, -7.90076 )
+
+[node name="Prop_Jenga12" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.022949, 0, -0.999737, 0, 1, 0, 0.999737, 0, -0.022949, 9.82247, 11.9327, -7.68256 )
+
+[node name="Prop_Jenga9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0510984, 0, -0.998694, 0, 1, 0, 0.998694, 0, 0.0510984, -3.33271, 11.9327, 0.110224 )
+
+[node name="Prop_Jenga14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.036477, 0, -0.998694, 0, 1, 0, 0.712924, 0, 0.0510984, -0.0651829, 9.54306, -0.213765 )
+
+[node name="Prop_Jenga2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300462, 0, 5.65097 )
+
+[node name="Prop_Jenga3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.994854, 0, -0.101317, 0, 1, 0, 0.101317, 0, 0.994854, -2.75825, 0, -6.57095 )
