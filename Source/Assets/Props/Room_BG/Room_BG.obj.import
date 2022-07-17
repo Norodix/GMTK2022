@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Room_BG.obj-94c34f17ec627e00cbc7c78bd4bfb2a1.mesh"
+
+[deps]
+
+files=[ "res://.import/Room_BG.obj-94c34f17ec627e00cbc7c78bd4bfb2a1.mesh" ]
+
+source_file="res://Assets/Props/Room_BG/Room_BG.obj"
+dest_files=[ "res://.import/Room_BG.obj-94c34f17ec627e00cbc7c78bd4bfb2a1.mesh", "res://.import/Room_BG.obj-94c34f17ec627e00cbc7c78bd4bfb2a1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
