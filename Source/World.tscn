@@ -41,19 +41,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.04769 )
 environment = ExtResource( 4 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
-transform = Transform( -0.939693, -0.296198, 0.17101, 0, 0.5, 0.866025, -0.34202, 0.813798, -0.469846, -2.216, 12.453, 0 )
+transform = Transform( -0.877716, 0.300577, -0.373188, 0, 0.778802, 0.62727, 0.479182, 0.550565, -0.683566, -2.216, 4.5293, -0.787665 )
 light_energy = 2.126
 light_bake_mode = 2
 shadow_enabled = true
 shadow_color = Color( 0.462745, 0.462745, 0.462745, 1 )
-shadow_bias = 0.334
+shadow_bias = 0.503
 shadow_reverse_cull_face = true
 directional_shadow_split_1 = 0.145
 directional_shadow_split_2 = 0.389
 directional_shadow_split_3 = 0.601
 directional_shadow_blend_splits = true
-directional_shadow_normal_bias = 0.283
-directional_shadow_bias_split_scale = 0.0
+directional_shadow_normal_bias = 0.715
+directional_shadow_bias_split_scale = 0.268
 directional_shadow_depth_range = 1
 
 [node name="Spawn" type="Position3D" parent="."]
