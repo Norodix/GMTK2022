@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron.tres" type="Material" id=1]
 [ext_resource path="res://Player/TPScam.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player/ExplosionHandler.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://Sound/sfx/explosion.wav" type="AudioStream" id=7]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sound/sfx/knock_short.wav" type="AudioStream" id=15]
 
 [sub_resource type="ConvexPolygonShape" id=1]
@@ -158,5 +159,7 @@ anims/ExplosionSquish = SubResource( 6 )
 [node name="Knock" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 15 )
+
+[node name="HUD" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="." to="." method="_on_PlayerRigidBody_body_entered"]

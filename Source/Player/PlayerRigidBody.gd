@@ -163,6 +163,7 @@ func find_ability() -> Ability:
 func jump():
 	print("jump")
 	apply_central_impulse(Vector3.UP * ability_jump_impulse)
+	on_ground_countdown = 0
 
 
 func dash():
@@ -178,11 +179,13 @@ func dash():
 	dir.y = tan(ability_dash_angle)
 	dir = dir.normalized()
 	apply_central_impulse(dir * ability_dash_impulse)
+	on_ground_countdown = 0
 	print("dash")
 
 
 func explode():
 	$ExplosionHandler.explode()
+	on_ground_countdown = 0
 	print("explode")
 
 
@@ -210,6 +213,9 @@ func highlightAbility(ability):
 	m.set_shader_param("mask2_enabled", id == 2)
 	m.set_shader_param("mask3_enabled", id == 3)
 	m.set_shader_param("mask4_enabled", id == 4)
+	
+	#Set the HUD indicator to the relevant ability
+	$HUD.set_ability(ability)
 
 
 func get_horizontal_look_direction() -> Vector3:
