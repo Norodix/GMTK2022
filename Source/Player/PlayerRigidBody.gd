@@ -67,7 +67,7 @@ func _physics_process(delta):
 	
 	# Respawn if below world
 	if self.global_transform.origin.y < -100:
-		respawn()
+		CheckPointSingleton.respawn()
 
 
 func activateAbility():
@@ -231,9 +231,6 @@ func get_horizontal_look_direction() -> Vector3:
 	dir = dir.normalized()
 	return dir
 
-
-func respawn():
-	get_tree().reload_current_scene()
 
 
 func handle_debug_inputs():
