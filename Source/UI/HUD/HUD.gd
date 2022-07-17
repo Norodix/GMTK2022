@@ -27,7 +27,7 @@ func _process(delta):
 	$Label.text = String(CollectibleHandler.pickupScore) + " / " + \
 					String(CollectibleHandler.maxScore)
 	$VictoryLabel.visible = CollectibleHandler.pickupScore == CollectibleHandler.maxScore \
-							and CollectibleHandler.pickupScore > 0
+							and CollectibleHandler.maxScore > 0
 
 func set_ability(ability : Ability):
 	if not ability:

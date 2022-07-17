@@ -249,6 +249,7 @@ func get_horizontal_look_direction() -> Vector3:
 
 
 func handle_debug_inputs():
+	return
 	if Input.is_action_just_pressed("jump_debug"):
 		jump()
 	if Input.is_action_just_pressed("dash_debug"):

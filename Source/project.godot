@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Dice Dash"
-run/main_scene="res://World.tscn"
+run/main_scene="res://UI/MainMenu/Menu.tscn"
 config/icon="res://UI/HUD/Hud_Explosion.png"
 
 [autoload]
