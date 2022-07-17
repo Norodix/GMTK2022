@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Props/Table_Boundaries/Table_Boundaries.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/Props/Table_Boundaries/Table.tres" type="Material" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 152.362, 9.07397, 265.765 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 200, 100, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -91.649, 0 )
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.1163, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -184.285 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 184.285 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 84, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -84, 0, 0 )
+shape = SubResource( 2 )
