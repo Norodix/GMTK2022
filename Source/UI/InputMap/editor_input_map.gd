@@ -2,7 +2,7 @@ extends Control
 
 const Action := preload("action.tscn")
 
-const UI_ACTIONS_ORDER := ["Left", "Right", "Up", "Down", "Ability",
+const UI_ACTIONS_ORDER := ["Left", "Right", "Up", "Down", "Ability", "Restart",
 	"CamJoystickLeft", "CamJoystickRight", "CamJoystickUp", "CamJoystickDown",
 	]
 

@@ -34,6 +34,8 @@ func _ready():
 
 func _process(delta):
 	handle_debug_inputs()
+	if Input.is_action_just_pressed("Restart"):
+		CheckPointSingleton.respawn()
 	pass
 
 
