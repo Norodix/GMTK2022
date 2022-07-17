@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/HUD/Hud_Jump.png" type="Texture" id=1]
 [ext_resource path="res://UI/HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://UI/Fonts/Mythoz32.tres" type="Theme" id=3]
+[ext_resource path="res://UI/Fonts/Mythoz.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_top = 42
+extra_spacing_space = 26
+font_data = ExtResource( 4 )
 
 [node name="HUD" type="CanvasLayer"]
 pause_mode = 2
@@ -21,3 +31,13 @@ margin_right = -20.0
 theme = ExtResource( 3 )
 text = "SCORE"
 align = 2
+
+[node name="VictoryLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "Congratulations,
+you collected all pawns"
+align = 1
+valign = 1
+autowrap = true

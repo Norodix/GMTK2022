@@ -1,19 +1,47 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Sound/sfx/success.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sound/sfx/checkpoint.wav" type="AudioStream" id=1]
 [ext_resource path="res://Checkpoint/Spade.svg" type="Texture" id=2]
 [ext_resource path="res://Checkpoint/CheckPointIndicator.gd" type="Script" id=3]
 
 [sub_resource type="QuadMesh" id=2]
 
-[sub_resource type="SpatialMaterial" id=3]
-flags_transparent = true
-flags_unshaded = true
-flags_do_not_receive_shadows = true
-flags_disable_ambient_light = true
-params_cull_mode = 2
-params_depth_draw_mode = 3
-albedo_texture = ExtResource( 2 )
+[sub_resource type="Shader" id=6]
+code = "shader_type spatial;
+render_mode blend_mix,depth_draw_alpha_prepass,cull_disabled,unshaded,shadows_disabled,ambient_light_disabled;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+uniform float point_size : hint_range(0,128);
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+}
+
+
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	ALPHA = albedo.a * albedo_tex.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/albedo = Color( 0.145098, 0.184314, 0.490196, 1 )
+shader_param/point_size = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 2 )
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.4
@@ -79,7 +107,7 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 7 )
 
 [node name="Area" type="Area" parent="."]
 collision_layer = 0

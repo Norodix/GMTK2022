@@ -26,6 +26,8 @@ func _process(delta):
 	$Indicator.position.x = get_viewport().size.x/2
 	$Label.text = String(CollectibleHandler.pickupScore) + " / " + \
 					String(CollectibleHandler.maxScore)
+	$VictoryLabel.visible = CollectibleHandler.pickupScore == CollectibleHandler.maxScore \
+							and CollectibleHandler.pickupScore > 0
 
 func set_ability(ability : Ability):
 	if not ability:
