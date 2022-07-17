@@ -9,7 +9,6 @@ extents = Vector3( 2.1, 0.1, 3.5 )
 
 [node name="Prop_Card" type="RigidBody"]
 mass = 0.2
-continuous_cd = true
 linear_damp = 0.81
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

@@ -8,7 +8,7 @@ margin = 0.1
 extents = Vector3( 1.04128, 2.02906, 0.579666 )
 
 [node name="Prop_Domino" type="RigidBody"]
-mass = 0.5
+mass = 2.0
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )
