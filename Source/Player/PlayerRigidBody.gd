@@ -96,7 +96,7 @@ func knockSound():
 	var maxDB = 20
 	var maxJerk = 40000
 	var dbOffset = -30
-	print(average_jerk_history[1])
+	#print(average_jerk_history[1])
 	
 	if knockplayer.playing == false:
 		# map from 0 to 6db based on jerk

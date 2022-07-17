@@ -36,6 +36,7 @@ DDD="*res://DrawLine3D.gd"
 InputMapSaveLoad="*res://UI/InputMap/InputMapSaveLoad.gd"
 CheckPointSingleton="*res://Checkpoint/CheckPointSingleton.gd"
 BackgroundMusicPlayer="*res://Sound/BackgroundMusic/BackgroundMusicPlayer.gd"
+CollectibleHandler="*res://Collectible/CollectibleHandler.gd"
 
 [editor_plugins]
 

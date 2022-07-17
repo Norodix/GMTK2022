@@ -842,3 +842,14 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -2.65657,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.0595, -16.3355, 164.43 )
 mesh = ExtResource( 14 )
 material/0 = null
+
+[node name="Collectibles" type="Spatial" parent="."]
+
+[node name="Position3D" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482507, -6.95286 )
+
+[node name="Position3D2" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47489, 0.482507, -6.95286 )
+
+[node name="Position3D3" type="Position3D" parent="Collectibles" groups=["CollectiblePositions"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82496, 0.482507, -6.95286 )
