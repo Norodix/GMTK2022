@@ -18,8 +18,9 @@ var ability_dash_impulse = 10
 var last_velocity = Vector3.ZERO
 var last_acceleration = Vector3.ZERO
 var average_jerk = Vector3.ZERO
+var average_jerk_history = [0, 0, 0]
 var canPlay = true
-var knock_min_jerk = 200
+var knock_min_jerk = 900
 
 var on_ground_countdown = 15
 
@@ -55,8 +56,18 @@ func _physics_process(delta):
 	var jerk = (acc - last_acceleration) / delta
 	last_velocity = self.linear_velocity
 	last_acceleration = acc
-	average_jerk = lerp(average_jerk, jerk, 0.2)
-	if average_jerk.length() > knock_min_jerk:
+	average_jerk = lerp(average_jerk, jerk, 0.7)
+	
+	#Peak detection
+	var peak = false
+	average_jerk_history.append(average_jerk.length())
+	if average_jerk_history.size() > 3:
+		average_jerk_history.remove(0)
+	if average_jerk_history[1] > average_jerk_history[2]:
+		if average_jerk_history[1] > average_jerk_history[0]:
+			peak = true
+	
+	if average_jerk_history[1] > knock_min_jerk and peak:
 		knockSound()
 	
 	# touching some ground thing, update ability
@@ -80,16 +91,18 @@ func activateAbility():
 
 func knockSound():
 	var knockplayer : AudioStreamPlayer = $Knock
-	var maxDB = 30
-	var maxJerk = 2000
+	var maxDB = 20
+	var maxJerk = 40000
 	var dbOffset = -30
+	print(average_jerk_history[1])
 	
 	if knockplayer.playing == false:
 		# map from 0 to 6db based on jerk
-		var j = clamp(average_jerk.length(), knock_min_jerk, maxJerk) - knock_min_jerk
-		var db = j / (maxJerk - knock_min_jerk) * maxDB
-		var pitch = 1 + db/maxDB /2
-		db += dbOffset
+		var j = clamp(average_jerk_history[1], knock_min_jerk, maxJerk) - knock_min_jerk
+		var ratio = j / (maxJerk - knock_min_jerk)
+		var db = ratio * maxDB + dbOffset
+		var pitch = 1 + ratio / 2
+#		db += dbOffset
 				
 		knockplayer.pitch_scale = pitch
 		knockplayer.volume_db = db
