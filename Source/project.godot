@@ -38,6 +38,11 @@ CheckPointSingleton="*res://Checkpoint/CheckPointSingleton.gd"
 BackgroundMusicPlayer="*res://Sound/BackgroundMusic/BackgroundMusicPlayer.gd"
 CollectibleHandler="*res://Collectible/CollectibleHandler.gd"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/randomAudioStreamPlayer/plugin.cfg" )

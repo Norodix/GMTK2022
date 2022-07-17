@@ -36,6 +36,7 @@ align = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 408.0
 custom_fonts/font = SubResource( 1 )
 text = "Congratulations,
 you collected all pawns"
