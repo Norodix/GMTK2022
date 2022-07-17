@@ -13,7 +13,6 @@ var maxDistance
 func _ready():
 	maxDistance = $Area/CollisionShape.shape.radius
 	print("Max distance of explosion: ", maxDistance)
-	$AnimationPlayer.set_blend_time("ExplosionSquish", "stop", 1)
 	pass # Replace with function body.
 
 
