@@ -134,7 +134,7 @@ func set_input() -> void:
 
 func exit_options():
 	InputMapSaveLoad.save_input_map()
-	get_tree().change_scene("res://UI/Menu.tscn")
+	get_tree().change_scene("res://UI/MainMenu/Menu.tscn")
 
 
 func _on_KeyConfirm_confirmed() -> void:
