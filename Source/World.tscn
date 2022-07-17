@@ -52,6 +52,10 @@ directional_shadow_normal_bias = 0.283
 directional_shadow_bias_split_scale = 0.0
 directional_shadow_depth_range = 1
 
+[node name="Spawn" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.49396, 8.56043 )
+script = ExtResource( 8 )
+
 [node name="PlayerRigidBody" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937065, 0 )
 
@@ -98,3 +102,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25356, -1.02915, 3.72889 )
 
 [node name="Prop_Jenga" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54781, -9.53674e-07, -11.4439 )
+
+[node name="CheckPoint" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.32002, 1.4514, -10.8358 )

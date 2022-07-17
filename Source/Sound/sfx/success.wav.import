@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/success.wav-6b28e43190273ebdfe22a0d65b743d29.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/success.wav"
+dest_files=[ "res://.import/success.wav-6b28e43190273ebdfe22a0d65b743d29.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

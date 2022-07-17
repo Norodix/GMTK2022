@@ -44,6 +44,7 @@ tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.1, 1, 0, 0, 0, 0, 0, 0, 1, 0.7, 0.7, 0.7, 0.2, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
 [node name="PlayerRigidBody" type="RigidBody"]
+collision_layer = 2
 contacts_reported = 20
 contact_monitor = true
 can_sleep = false

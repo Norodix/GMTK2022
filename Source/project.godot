@@ -34,6 +34,7 @@ config/icon="res://icon.png"
 
 DDD="*res://DrawLine3D.gd"
 InputMapSaveLoad="*res://UI/InputMap/InputMapSaveLoad.gd"
+CheckPointSingleton="*res://Checkpoint/CheckPointSingleton.gd"
 
 [editor_plugins]
 

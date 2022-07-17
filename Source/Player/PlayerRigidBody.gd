@@ -26,6 +26,8 @@ var on_ground_countdown = 15
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	if CheckPointSingleton.checkpoint:
+		self.global_transform.origin = CheckPointSingleton.checkpoint
 	pass # Replace with function body.
 
 
@@ -62,6 +64,11 @@ func _physics_process(delta):
 		update_ability()
 	
 	highlightAbility(active_ability)
+	
+	# Respawn if below world
+	if self.global_transform.origin.y < -100:
+		respawn()
+
 
 func activateAbility():
 	if $AbilityCooldown.is_stopped():
@@ -223,6 +230,10 @@ func get_horizontal_look_direction() -> Vector3:
 	dir.y = 0
 	dir = dir.normalized()
 	return dir
+
+
+func respawn():
+	get_tree().reload_current_scene()
 
 
 func handle_debug_inputs():
