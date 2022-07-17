@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Props/Prop_Domino/Prop_Domino.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Props/Prop_Domino/Prop_Domino.obj" type="ArrayMesh" id=2]
 
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.28
+rough = true
+
 [sub_resource type="BoxShape" id=1]
 margin = 0.1
-extents = Vector3( 1.04128, 2.02906, 0.579666 )
+extents = Vector3( 1.04128, 2.02906, 0.48347 )
 
 [node name="Prop_Domino" type="RigidBody"]
-mass = 2.0
+mass = 1.5
+physics_material_override = SubResource( 2 )
+continuous_cd = true
+can_sleep = false
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )

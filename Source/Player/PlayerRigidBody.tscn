@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Props/Dodecahedron/Dodecahedron.tres" type="Material" id=1]
 [ext_resource path="res://Player/TPScam.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Sound/sfx/explosion.wav" type="AudioStream" id=7]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sound/sfx/knock_short.wav" type="AudioStream" id=15]
+
+[sub_resource type="PhysicsMaterial" id=7]
+rough = true
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( 0.356807, 5.96046e-08, 0.934172, 0.934172, 0.356807, 5.96046e-08, 0.577182, 0.577182, 0.577182, 5.96046e-08, 0.934172, 0.356807, -0.35699, 5.96046e-08, 0.934172, 5.96046e-08, -0.934172, 0.356807, 0.577182, -0.577365, 0.577182, 0.934172, -0.35699, 5.96046e-08, 0.356807, 5.96046e-08, -0.934172, 0.577182, 0.577182, -0.577365, 5.96046e-08, 0.934172, -0.35699, -0.934172, 0.356807, 5.96046e-08, -0.577365, 0.577182, 0.577182, -0.934172, -0.35699, 5.96046e-08, -0.577365, -0.577365, 0.577182, 5.96046e-08, -0.934172, -0.35699, 0.577182, -0.577365, -0.577365, -0.35699, 5.96046e-08, -0.934172, -0.577365, 0.577182, -0.577365, -0.577365, -0.577365, -0.577365 )
@@ -45,6 +48,7 @@ tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.1, 1, 0, 0,
 
 [node name="PlayerRigidBody" type="RigidBody"]
 collision_layer = 2
+physics_material_override = SubResource( 7 )
 contacts_reported = 20
 contact_monitor = true
 can_sleep = false
