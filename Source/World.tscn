@@ -110,3 +110,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.66915, 1.40031, 3.72889 )
 
 [node name="CheckPoint" parent="." instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.57619, 0.923241, -11.9564 )
+
+[node name="CheckPoint2" parent="." instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 6.86185, 7.03553, -11.7886 )

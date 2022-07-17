@@ -7,6 +7,9 @@ func _ready():
 
 
 func _on_Area_body_entered(body):
-	CheckPointSingleton.checkpoint = self.global_transform
-	$AudioStreamPlayer.play()
+	if CheckPointSingleton.checkpoint != null :
+		if CheckPointSingleton.checkpoint.is_equal_approx(self.global_transform):
+			return
+		CheckPointSingleton.checkpoint = self.global_transform
+		$AudioStreamPlayer.play()
 	pass # Replace with function body.
