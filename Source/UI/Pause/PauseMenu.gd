@@ -21,7 +21,7 @@ func _on_Resume_pressed():
 
 func _on_Exit_pressed():
 	resumeGame()
-	get_tree().change_scene("res://UI/Menu.tscn")
+	get_tree().change_scene("res://UI/MainMenu/Menu.tscn")
 	pass # Replace with function body.
 
 func pauseGame():
