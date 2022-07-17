@@ -78,7 +78,7 @@ margin_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
-text = "Exit"
+text = "Back to Menu"
 
 [node name="KeyConfirm" type="ConfirmationDialog" parent="."]
 anchor_left = 0.5

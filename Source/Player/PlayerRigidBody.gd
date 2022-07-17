@@ -138,7 +138,7 @@ func _integrate_forces(state):
 	else:
 		on_ground_countdown -= 1
 	
-	DDD.DrawRay(self.global_transform.origin, sumnormal, Color(0, 0, 1))
+	#DDD.DrawRay(self.global_transform.origin, sumnormal, Color(0, 0, 1))
 
 
 func is_on_ground() -> bool:
