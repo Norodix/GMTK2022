@@ -34,3 +34,10 @@ func resumeGame():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass
+
+
+func _on_Respawn_pressed():
+	resumeGame()
+	yield(get_tree().create_timer(0.1), "timeout")
+	CheckPointSingleton.respawn()
+	pass # Replace with function body.
