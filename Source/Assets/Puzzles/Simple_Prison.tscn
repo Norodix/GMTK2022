@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Props/Prop_Dice/Prop_Dice.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Puzzles/Puzzle.gd" type="Script" id=3]
 
 [node name="Simple_Prison" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="Dice_Wall" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.678535, 0 )
@@ -120,3 +122,8 @@ transform = Transform( 0.305413, 0, 0.95222, 0, 1, 0, -0.95222, 0, 0.305413, -9.
 
 [node name="Prop_Jenga8" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.994861, 0, -0.101247, 0, 1, 0, 0.101247, 0, 0.994861, -11.6595, 1.90735e-06, -10.152 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98294, 2.8338, -11.1115 )
+visible = false
+aabb = AABB( -16.2319, -3.94536, -13.0989, 32.4638, 7.89072, 26.1978 )
