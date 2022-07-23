@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga_Block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/PlayerRigidBody.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=4]
 [ext_resource path="res://UI/Pause/PauseMenu.tscn" type="PackedScene" id=5]

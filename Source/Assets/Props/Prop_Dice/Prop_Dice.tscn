@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.1
-extents = Vector3( 0.55, 0.55, 0.55 )
+extents = Vector3( 0.621377, 0.621797, 0.622056 )
 
 [node name="Prop_Dice" type="RigidBody"]
 mass = 0.5

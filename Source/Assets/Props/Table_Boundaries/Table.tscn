@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Props/Table_Boundaries/Table.tres" type="Material" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 152.362, 9.07397, 265.765 )
+extents = Vector3( 152.362, 9.11143, 265.765 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 200, 100, 1 )
