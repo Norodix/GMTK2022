@@ -10,8 +10,8 @@ shader_param/outline_thickness = 0.15
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0, 0.430147, 0.724265, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 0, 1, 0.121094, 1, 0.0664062, 0, 1, 1, 1, 1, 1, 1 )
+offsets = PoolRealArray( 0, 0.161765, 0.176471, 0.459559, 0.474265, 0.786765, 0.805147, 1 )
+colors = PoolColorArray( 0.725586, 0.106287, 0, 1, 0.725586, 0.106287, 0, 1, 0.0940073, 0.835938, 0.0881653, 1, 0.0940073, 0.835938, 0.0881653, 1, 0.0664062, 0, 1, 1, 0.232925, 0.270858, 0.839844, 1, 0.865078, 0.494843, 0.917969, 1, 0.865078, 0.494843, 0.917969, 1 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
