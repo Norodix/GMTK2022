@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga_Block.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Props/Prop_Card/Prop_Card.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Props/Prop_Domino/Prop_Domino.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Checkpoint/Spawn.gd" type="Script" id=8]
+[ext_resource path="res://JengaBlockMultiMesh.gd" type="Script" id=9]
 [ext_resource path="res://Checkpoint/CheckPointIndicator.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Props/Room_BG/Room_BG.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://Assets/Props/Room_BG/Room_BG.tres" type="Material" id=12]
@@ -670,3 +671,6 @@ transform = Transform( -0.022443, 0, 0.999748, 0, 1, 0, -0.999748, 0, -0.022443,
 
 [node name="Simple_Tower" parent="Puzzles" instance=ExtResource( 18 )]
 transform = Transform( 0.0067195, 0, -0.999977, 0, 1, 0, 0.999977, 0, 0.0067195, 44.4827, -16.0423, -19.7648 )
+
+[node name="JengaBlockMultiMesh" type="MultiMeshInstance" parent="."]
+script = ExtResource( 9 )

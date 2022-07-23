@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.15365, 0.655653, 3.151 )
 
-[node name="Prop_Jenga_Single" type="StaticBody"]
+[node name="Prop_Jenga_Single" type="StaticBody" groups=["JengaBlock"]]
 
 [node name="Prop_Jenga" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )

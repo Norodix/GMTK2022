@@ -22,37 +22,34 @@ uniform sampler2D base_texture: hint_albedo;
 uniform sampler2D shade_texture: hint_albedo;
 uniform sampler2D palette: hint_albedo;
 
-
 float random (vec2 st) {
     return fract(sin(dot(st.xy,
                          vec2(12.9898,78.233)))*
         43758.5453123);
 }
 
-
 void vertex(){
-	float rand = fract(float(WORLD_MATRIX[3].x + WORLD_MATRIX[3].y + WORLD_MATRIX[3].z)*43758.5453123);
-	COLOR = texture(palette, vec2(rand, 0.0));
+	COLOR = INSTANCE_CUSTOM;
 }
-
 
 void fragment(){
-	vec4 color = float(use_vertex_color) * COLOR + (1.0-float(use_vertex_color)) * base_color;
-	ALBEDO = color.rgb;
-	ALPHA = color.a;
+	ALBEDO = COLOR.rgb;
+	ALPHA = COLOR.a;
 }
-
 
 void light()
 {
+	float x = WORLD_MATRIX[3].x + WORLD_MATRIX[3].y;
+	float y = WORLD_MATRIX[3].z + ALBEDO.r;
+	float rand = random(vec2(x, y));
+	vec4 randColor = texture(palette, vec2(rand, 0.0));
+	vec4 base = texture(base_texture, UV).rgba * randColor * base_color;
+	vec4 diffuse = base;
+	vec4 shade = texture(shade_texture, UV).rgba * randColor * shade_color.rgba;
 	float NdotL = dot(NORMAL, LIGHT);
 	float is_lit = step(shade_threshold, NdotL);
-	vec4 base = texture(base_texture, UV).rgba * vec4(ALBEDO, ALPHA);
 	//vec4 base = texture(base_texture, UV).rgba * base_color.rgba;
-	vec4 shade = texture(shade_texture, UV).rgba * shade_color.rgba * vec4(ALBEDO, ALPHA);
-	vec4 diffuse = base;
 	
-
 	if (use_shade)
 	{
 		float shade_value = smoothstep(shade_threshold - shade_softness ,shade_threshold + shade_softness, NdotL);

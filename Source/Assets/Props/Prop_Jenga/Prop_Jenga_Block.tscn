@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga_Single.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga_Block.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Props/Prop_Jenga/Prop_Jenga.tres" type="Material" id=4]
+
+[sub_resource type="MultiMesh" id=1]
+transform_format = 1
+custom_data_format = 2
+mesh = ExtResource( 2 )
 
 [node name="Prop_Jenga_Block" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.407847, 0.436563, -0.801919, -0.121086, 0.896389, 0.426409, 0.904986, -0.0768086, 0.418451, -0.22106, 3.68699, 0 )
@@ -55,3 +64,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31746, 4.78413, 0.0350862 )
 
 [node name="Prop_Jenga_Single15" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31746, 4.78413, 0 )
+
+[node name="MultiMeshInstance" type="MultiMeshInstance" parent="."]
+material_override = ExtResource( 4 )
+multimesh = SubResource( 1 )
