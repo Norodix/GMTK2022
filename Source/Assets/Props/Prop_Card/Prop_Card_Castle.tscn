@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Props/Prop_Card/Prop_Card.tscn" type="PackedScene" id=1]
+
+[node name="Prop_Card_Castle" type="Spatial"]
+
+[node name="Prop_Card" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, 0.969262, 3.46417, 0 )
+
+[node name="Prop_Card2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -0.965926, -0.258819, 0, 0.258819, -0.965926, 1, -4.2222e-08, -1.13133e-08, -0.974885, 3.46417, 0 )
+
+[node name="Prop_Card3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, 5.12463, 3.46417, 0 )
+
+[node name="Prop_Card4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -0.965926, -0.258819, 0, 0.258819, -0.965926, 1, -4.2222e-08, -1.13133e-08, 3.18049, 3.46417, 0 )
+
+[node name="Prop_Card5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, -3.18021, 3.46417, 0 )
+
+[node name="Prop_Card6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -0.965926, -0.258819, 0, 0.258819, -0.965926, 1, -4.2222e-08, -1.13133e-08, -5.12436, 3.46417, 0 )
+
+[node name="Prop_Card9" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, 0.969262, 10.8863, 0 )
+
+[node name="Prop_Card10" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -0.965926, -0.258819, 0, 0.258819, -0.965926, 1, -4.2222e-08, -1.13133e-08, -0.974885, 10.8863, 0 )
+
+[node name="Prop_Card11" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, 5.12463, 10.8863, 0 )
+
+[node name="Prop_Card12" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -0.965926, -0.258819, 0, 0.258819, -0.965926, 1, -4.2222e-08, -1.13133e-08, 3.18049, 10.8863, 0 )
+
+[node name="Prop_Card13" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, -3.18021, 10.8863, 0 )
+
+[node name="Prop_Card14" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -0.965926, -0.258819, 0, 0.258819, -0.965926, 1, -4.2222e-08, -1.13133e-08, -5.12436, 10.8863, 0 )
+
+[node name="Prop_Card7" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.90411, 7.0019, 0 )
+
+[node name="Prop_Card8" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.83463, 7.21735, 0 )
+
+[node name="Prop_Card15" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.90411, 14.5722, 0 )
+
+[node name="Prop_Card16" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.83463, 14.7876, 0 )

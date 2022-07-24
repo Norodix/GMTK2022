@@ -9,7 +9,7 @@ absorbent = true
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.1
-extents = Vector3( 2.1, 0.1, 3.5 )
+extents = Vector3( 2.13824, 0.0769614, 3.54122 )
 
 [node name="Prop_Card" type="RigidBody"]
 mass = 0.2
