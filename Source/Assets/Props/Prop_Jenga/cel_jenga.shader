@@ -39,9 +39,7 @@ void fragment(){
 
 void light()
 {
-	float x = ALBEDO.r + ALBEDO.g;
-	float y = ALBEDO.b;
-	float rand = random(vec2(x, y));
+	float rand = ALBEDO.r;
 	vec4 randColor = texture(palette, vec2(rand, 0.0));
 	vec4 base = texture(base_texture, UV).rgba * randColor * base_color;
 	vec4 diffuse = base;
